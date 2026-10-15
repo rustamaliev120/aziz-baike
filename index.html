@@ -1,0 +1,1835 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>30 рилсов Азиза байке</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Unbounded:wght@600;800&display=swap">
+<style>
+/* Layout: production bible — one reading column, sticky section tabs, each reel is a numbered film slate that opens into its shooting script */
+:root{
+  --bg:#F3F3F0;
+  --surface:#FFFFFF;
+  --ink:#1A1814;
+  --muted:#5F5A51;
+  --line:#DEDCD5;
+  --accent:#F2B705;
+  --mark:#FCE6A0;
+  --focus:#1F5FD1;
+  --ok:#2E7D52;
+  --neg:#B3261E;
+  --video-bg:#141414;
+  --video-fg:#FFFFFF;
+  --video-num:#FFD23F;
+  --video-plate:rgba(0,0,0,.55);
+  --video-guide:rgba(255,255,255,.45);
+  --video-shadow:#000000;
+  --hatch:rgba(242,183,5,.34);
+  --r-prov:#C8432F;
+  --r-big:#B95F16;
+  --r-price:#2E7D52;
+  --r-exp:#2F64B0;
+  --r-know:#157A7A;
+  --r-story:#7E5236;
+  --r-team:#82468F;
+  --on-rc:#FFFFFF;
+  --font-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --font-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121110; --surface:#1B1A17; --ink:#ECE9E2; --muted:#A7A195; --line:#2F2C28;
+    --accent:#F2B705; --mark:#5B4708; --focus:#8DB4FF; --ok:#5DB585; --neg:#F2867D;
+    --video-bg:#0B0B0B; --video-fg:#FFFFFF; --video-num:#FFD23F; --video-plate:rgba(0,0,0,.6); --video-guide:rgba(255,255,255,.45); --video-shadow:#000000;
+    --hatch:rgba(242,183,5,.28);
+    --r-prov:#E4715D; --r-big:#EE9A4A; --r-price:#5DB585; --r-exp:#7EA6E6; --r-know:#4DB3B3; --r-story:#C49272; --r-team:#BC8DC7;
+    --on-rc:#121110;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121110; --surface:#1B1A17; --ink:#ECE9E2; --muted:#A7A195; --line:#2F2C28;
+  --accent:#F2B705; --mark:#5B4708; --focus:#8DB4FF; --ok:#5DB585; --neg:#F2867D;
+  --video-bg:#0B0B0B; --video-fg:#FFFFFF; --video-num:#FFD23F; --video-plate:rgba(0,0,0,.6); --video-guide:rgba(255,255,255,.45); --video-shadow:#000000;
+  --hatch:rgba(242,183,5,.28);
+  --r-prov:#E4715D; --r-big:#EE9A4A; --r-price:#5DB585; --r-exp:#7EA6E6; --r-know:#4DB3B3; --r-story:#C49272; --r-team:#BC8DC7;
+  --on-rc:#121110;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--font-body)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.25em}
+li+li{margin-top:5px}
+b,strong{font-weight:700}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+mark.ph{background:var(--mark);color:inherit;border-radius:3px;padding:0 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* header */
+.top{background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{padding-block:28px 24px;display:grid;gap:14px}
+.eyebrow{font:600 12px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 clamp(26px,6.2vw,44px)/1.08 var(--font-display);letter-spacing:-.01em}
+.lede{font-size:18px;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:6px 0 0}
+.facts div{border-top:2px solid var(--ink);padding-top:8px;min-width:0}
+.facts dt{font:600 11px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs .row{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.tabs .row::-webkit-scrollbar{display:none}
+.tabs a{flex:none;text-decoration:none;font-weight:600;font-size:14px;color:var(--muted);padding:7px 11px;border-radius:999px}
+.tabs a:hover{color:var(--ink);background:var(--surface)}
+
+/* sections */
+.page-sec{padding-block:42px;border-bottom:1px solid var(--line)}
+.sec-head{display:grid;gap:8px;margin-bottom:22px}
+h2{font:700 clamp(21px,4vw,28px)/1.15 var(--font-display)}
+.sec-note{color:var(--muted);max-width:64ch}
+h3{font-size:19px;line-height:1.3}
+h4{font:600 12px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 8px}
+.sub{margin-top:30px}
+.sub>h3{margin-bottom:10px}
+
+/* steps */
+.steps{list-style:none;padding:0;display:grid;gap:14px}
+.steps>li+li{margin-top:0}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:10px;min-width:0}
+.when{font:700 12px/1.2 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--bg);padding:5px 8px;border-radius:4px;justify-self:start}
+.who{color:var(--muted);font-size:14px}
+.tl{display:grid;grid-template-columns:5.8em 1fr;gap:6px 12px;margin:0}
+.tl dt{font:700 13px/1.55 var(--font-mono);font-variant-numeric:tabular-nums}
+.tl dd{margin:0;min-width:0}
+.tl-day{font-weight:700;margin-top:6px}
+.result{font-weight:600;border-top:1px solid var(--line);padding-top:10px}
+.checks{list-style:none;padding:0}
+.checks li{position:relative;padding-left:26px}
+.checks li::before{content:"";position:absolute;left:0;top:.32em;width:14px;height:14px;border:1.5px solid var(--ink);border-radius:3px}
+
+/* numbered rule lists */
+.rule-list{counter-reset:r;list-style:none;padding:0;display:grid;gap:12px}
+.rule-list>li{counter-increment:r;display:grid;grid-template-columns:2.4em 1fr;gap:10px;align-items:start}
+.rule-list>li+li{margin-top:0}
+.rule-list>li::before{content:counter(r);font:800 15px/1.55 var(--font-display);color:var(--muted)}
+.rule-list>li>div{min-width:0}
+.rule-list .hint{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+/* buttons, chips */
+.btn,.fbtn,.sbtn{font:600 14px/1.1 var(--font-body);padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover,.fbtn:hover,.sbtn:hover{border-color:var(--ink)}
+.fbtn{font-size:13px;border-radius:999px;padding:8px 11px}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fbtn .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rc);margin-right:6px;vertical-align:1px}
+.sbtn[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.chip{display:inline-block;font:600 12px/1.45 var(--font-body);padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.chip.rub{color:color-mix(in srgb,var(--rc) 72%,var(--ink));border-color:color-mix(in srgb,var(--rc) 55%,transparent);background:color-mix(in srgb,var(--rc) 12%,transparent)}
+
+/* reel controls */
+.controls{display:grid;gap:10px;margin-bottom:16px}
+.filter-row{display:flex;flex-wrap:wrap;gap:6px}
+.ctrl-row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.progress{font-size:14px;color:var(--muted)}
+.legend{display:grid;gap:6px;font-size:15px;max-width:66ch;margin-bottom:16px}
+
+/* reel cards */
+.reels{display:grid;gap:10px}
+.reel{background:var(--surface);border:1px solid var(--line);border-radius:8px;min-width:0}
+.reel>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 14px}
+.reel>summary::-webkit-details-marker{display:none}
+.reel[open]>summary{border-bottom:1px solid var(--line)}
+.slate{--slate-a:var(--ink);--slate-b:var(--surface);background:var(--rc);color:var(--on-rc);font:800 15px/1 var(--font-display);text-align:center;width:62px;border-radius:4px;overflow:hidden;padding-bottom:9px}
+.slate::before{content:"";display:block;height:7px;margin-bottom:8px;background:repeating-linear-gradient(-45deg,var(--slate-a) 0 6px,var(--slate-b) 6px 12px)}
+.sum-main{min-width:0;display:grid;gap:6px}
+.sum-title{font-weight:700;font-size:17px;line-height:1.3}
+.sum-meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--muted);align-items:center}
+.dots{display:flex;gap:4px}
+.dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--muted)}
+.dots i.on{background:var(--ok);border-color:var(--ok)}
+.reel-body{padding:16px 14px 22px;min-width:0}
+.status{display:flex;flex-wrap:wrap;gap:6px}
+.why{font-size:17px;max-width:66ch;margin-top:14px}
+.kv{display:grid;grid-template-columns:8.6em 1fr;gap:9px 14px;margin:18px 0 0}
+.kv dt{font:600 12px/1.65 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kv dd{margin:0;min-width:0}
+.beats{list-style:none;padding:0;display:grid;gap:8px}
+.beats>li+li{margin-top:0}
+.beat{display:grid;grid-template-columns:6.4em 1fr;gap:12px;padding:12px;background:var(--bg);border-radius:6px}
+.beat.end{background:transparent;border:1px dashed var(--line)}
+.tc{font:700 13px/1.55 var(--font-mono);font-variant-numeric:tabular-nums}
+.beat-body{min-width:0;display:grid;gap:8px}
+.lbl{display:block;font:600 11px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.say{font-size:17px;font-weight:600;line-height:1.45}
+.onscreen{display:inline-block;background:var(--video-bg);color:var(--video-fg);font:700 14px/1.4 var(--font-body);padding:5px 9px;border-radius:4px;max-width:100%}
+.onscreen .y{color:var(--video-num)}
+.onscreen mark.ph{background:transparent;color:var(--video-num);padding:0 2px;outline:1px dashed var(--video-num);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.two>div{min-width:0}
+.pub{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.cover{position:relative;width:118px;max-width:100%;aspect-ratio:9/16;background:var(--video-bg);color:var(--video-fg);border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font:800 12px/1.2 var(--font-display);text-transform:uppercase;overflow:hidden}
+.cover::after{content:"";position:absolute;left:0;right:0;top:12.5%;bottom:12.5%;border-top:1px dashed var(--video-guide);border-bottom:1px dashed var(--video-guide);pointer-events:none}
+.cover mark.ph{background:transparent;color:var(--video-num);padding:0}
+.cap{min-width:0}
+.cap-text{background:var(--bg);border-radius:6px;padding:12px;font-size:15px;overflow-wrap:anywhere}
+.cap .btn{margin-top:8px}
+.neg-h{color:var(--neg)}
+.neg-list li::marker{color:var(--neg)}
+.after{font-weight:600;margin-top:16px}
+.count{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:15px}
+.cover-note{font-size:13px;color:var(--muted);margin-top:6px;max-width:118px}
+
+/* backups */
+.backups{display:grid;gap:12px}
+.backup{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.backup .head{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:10px}
+.backup .code{font:800 14px/1 var(--font-display)}
+
+/* calendar */
+.cal{list-style:none;padding:0;display:grid}
+.cal>li+li{margin-top:0}
+.cal>li{display:grid;grid-template-columns:4.8em 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.cal .d{font:700 13px/1.6 var(--font-mono);font-variant-numeric:tabular-nums}
+.cal .items{display:grid;gap:5px;min-width:0}
+.cal a.rl{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 8px;text-decoration:none}
+.cal a.rl:hover .rt{text-decoration:underline}
+.cal .tag{font:800 11px/1 var(--font-display);background:var(--rc);color:var(--on-rc);padding:4px 6px;border-radius:3px}
+.cal .t{font:700 12px/1 var(--font-mono);color:var(--muted)}
+.cal .note{color:var(--muted);font-size:14px}
+.cal .shoot{font-weight:600;font-size:15px}
+
+/* memos */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px 30px}
+.cols>div{min-width:0}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+.big-phrase{font:800 clamp(20px,4.6vw,30px)/1.2 var(--font-display);margin:6px 0}
+.with-frame{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.with-frame>div{min-width:0}
+
+/* video frame mock */
+.frame{position:relative;width:220px;max-width:100%;aspect-ratio:9/16;background:var(--video-bg);color:var(--video-fg);border-radius:12px;overflow:hidden}
+.zone{position:absolute;background:repeating-linear-gradient(45deg,var(--hatch) 0 6px,transparent 6px 12px);display:flex;align-items:center;justify-content:center;font:600 10px/1.2 var(--font-mono);text-align:center;color:var(--video-fg);padding:4px}
+.z-top{left:0;right:0;top:0;height:12%}
+.z-bottom{left:0;right:0;bottom:0;height:25%}
+.z-right{right:0;top:12%;bottom:25%;width:12%;writing-mode:vertical-rl}
+.f-plate{position:absolute;left:6%;top:14%;background:var(--video-plate);font:700 9px/1.2 var(--font-body);padding:4px 6px;border-radius:3px}
+.f-num{position:absolute;left:6%;top:31%;font:800 30px/1 var(--font-display);color:var(--video-num)}
+.f-sub{position:absolute;left:5%;right:15%;top:55%;text-align:center;font:800 13px/1.25 var(--font-body);text-shadow:0 0 3px var(--video-shadow),0 0 3px var(--video-shadow)}
+.frame-cap{font-size:13px;color:var(--muted);margin-top:8px;max-width:220px}
+
+/* tables */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-variant-numeric:tabular-nums}
+th{font:600 11px/1.3 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td .tag{font:800 11px/1 var(--font-display);background:var(--rc);color:var(--on-rc);padding:4px 6px;border-radius:3px;white-space:nowrap}
+.copy-block{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px;white-space:pre-wrap;font-size:15px;overflow-wrap:anywhere}
+
+.foot{padding-block:28px 40px;color:var(--muted);font-size:14px}
+
+@media (max-width:640px){
+  .two,.cols{grid-template-columns:1fr}
+  .with-frame{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .kv{grid-template-columns:1fr;gap:2px}
+  .kv dd{margin-bottom:10px}
+  .beat{grid-template-columns:1fr;gap:6px}
+  .reel>summary{gap:10px;padding:12px}
+  .slate{width:54px;font-size:13px}
+  .tl{grid-template-columns:4.9em 1fr}
+}
+@media (max-width:420px){
+  .pub{grid-template-columns:1fr}
+  .reel>summary{grid-template-columns:auto 1fr}
+  .dots{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Личный бренд · @nasirdinov_a · первый месяц</p>
+    <h1>30 рилсов Азиза байке</h1>
+    <p class="lede">Образ: <b>хозяин, который сам пробует и делает всё по-большому.</b> Каждый ролик это подтверждает.</p>
+    <dl class="facts">
+      <div><dt>Цель месяца</dt><dd>3 000 → 4 000–4 500 подписчиков</dd></div>
+      <div><dt>Ритм</dt><dd>1 ролик в день, 32 дня подряд</dd></div>
+      <div><dt>Порядок</dt><dd>Пилот → 15 роликов → 14 роликов</dd></div>
+      <div><dt>Команда</dt><dd>Азиз · мобилограф · продюсер</dd></div>
+    </dl>
+  </div>
+</header>
+<nav class="tabs" aria-label="Разделы">
+  <div class="wrap row">
+    <a href="#plan">Порядок</a>
+    <a href="#calendar">Календарь</a>
+    <a href="#rules">Правила</a>
+    <a href="#reels">30 рилсов</a>
+    <a href="#aziz">Азизу</a>
+    <a href="#camera">Мобилографу</a>
+    <a href="#edit">Монтаж</a>
+    <a href="#post">Публикация</a>
+    <a href="#facts">Лист цифр</a>
+    <a href="#metrics">Метрики</a>
+    <a href="#profile">Профиль</a>
+    <a href="#consent">Согласия</a>
+    <a href="#budget">Бюджет</a>
+  </div>
+</nav>
+<main>
+
+<section class="page-sec" id="plan">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Порядок работы</h2>
+      <p class="sec-note">Идём строго по шагам. Следующий шаг начинаем, только когда закрыт предыдущий.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="when">До старта · 1 день</span>
+        <h3>Подготовка</h3>
+        <p class="who">Продюсер — весь день. Азиз — 1 час. Мобилограф — 1 час.</p>
+        <ul class="checks">
+          <li>Оформить профиль по разделу <a href="#profile">«Профиль»</a>.</li>
+          <li>Пройти с Азизом <a href="#facts">«Лист цифр»</a> — 40 минут. Ответ нужен на каждый вопрос.</li>
+          <li>Собрать подписанные согласия сотрудников на всех точках — текст в разделе <a href="#consent">«Согласия»</a>.</li>
+          <li>Мобилограф проверяет технику по списку в разделе <a href="#camera">«Мобилографу»</a>.</li>
+          <li>Азиз репетирует только две вещи: первую фразу пилота и финал с ложкой — «Баарыңарга аш болсун!».</li>
+          <li>Создать в Google Drive папку «Азиз байке» с папками R01 … R30.</li>
+        </ul>
+        <p class="result">Шаг закрыт, когда профиль оформлен, лист цифр заполнен, согласия подписаны.</p>
+      </li>
+      <li class="step">
+        <span class="when">День 1</span>
+        <h3>Пилот: снять R01 и в этот же день выложить</h3>
+        <p class="who">Азиз, мобилограф, продюсер</p>
+        <dl class="tl">
+          <dt>10:30</dt><dd>Выезд. Управляющий точки о визите не знает.</dd>
+          <dt>11:00</dt><dd>Съёмка <a href="#r01">R01</a> — 40 минут.</dd>
+          <dt>12:00</dt><dd>Монтаж до 16:00 по разделу <a href="#edit">«Монтаж»</a>.</dd>
+          <dt>17:00</dt><dd>Азиз и продюсер смотрят ролик. Правим только ошибки, вкусовые правки не делаем.</dd>
+          <dt>19:30</dt><dd>Публикация по разделу <a href="#post">«Публикация»</a>.</dd>
+          <dt>19:30–20:30</dt><dd>Ответы на все комментарии.</dd>
+        </dl>
+        <p class="result">Выложили — не удаляем, даже если просмотров мало. Один ролик ничего не решает.</p>
+      </li>
+      <li class="step">
+        <span class="when">День 2</span>
+        <h3>Съёмка А: 7 роликов на главной точке с кухней</h3>
+        <p class="who">Азиз — 05:45–08:00 и 10:00–13:30. Мобилограф, продюсер, главный повар, управляющий — весь день.</p>
+        <dl class="tl">
+          <dt>05:45</dt><dd><a href="#r02">R02</a>: Азиз у пустого казана — первый кадр. Штатив ставим на весь таймлапс и больше не трогаем.</dd>
+          <dt>06:00</dt><dd><a href="#r06">R06</a>, кадр 1: часы и закладка плова.</dd>
+          <dt>07:00</dt><dd><a href="#r09">R09</a>: лук на одну смену.</dd>
+          <dt>08:00</dt><dd>Перерыв для Азиза. Штатив пишет казан. Мобилограф снимает перебивки.</dd>
+          <dt>10:00</dt><dd><a href="#r02">R02</a>, финал: крышка, пар, первая порция.</dd>
+          <dt>10:30</dt><dd><a href="#r13">R13</a>: три признака свежего плова.</dd>
+          <dt>11:00</dt><dd><a href="#r06">R06</a>, кадр 2: первая порция и часы.</dd>
+          <dt>11:10</dt><dd><a href="#r03">R03</a>: угадай цену обеда.</dd>
+          <dt>12:25</dt><dd>Второй телефон на штативе пишет <a href="#r14">R14</a> (пик) до 13:30.</dd>
+          <dt>12:40</dt><dd><a href="#r10">R10</a>: Азиз 5 минут на раздаче.</dd>
+          <dt>13:30</dt><dd><a href="#r14">R14</a>, финал с командой.</dd>
+          <dt>Вечер</dt><dd>Управляющий снимает <a href="#r06">R06</a>, кадр 3, по инструкции из карточки.</dd>
+        </dl>
+        <p class="result">Вечером продюсер записывает цифры R01 за 24 часа в таблицу раздела <a href="#metrics">«Метрики»</a>.</p>
+      </li>
+      <li class="step">
+        <span class="when">День 3</span>
+        <h3>Съёмка Б: 8 роликов на трёх точках и в офисе</h3>
+        <p class="who">Азиз — 09:30–18:00. Мобилограф, продюсер.</p>
+        <dl class="tl">
+          <dt>09:30</dt><dd>Точка №<mark class="ph">[номер точки 2]</mark>: <a href="#r04">R04</a>, белая перчатка.</dd>
+          <dt>11:00</dt><dd>Точка №<mark class="ph">[номер точки 3]</mark>: <a href="#r07">R07</a>, инкогнито. Мобилограф заходит на 5 минут раньше Азиза.</dd>
+          <dt>12:30</dt><dd>Там же: <a href="#r11">R11</a>, наесться на <mark class="ph">[200]</mark> сом.</dd>
+          <dt>13:00</dt><dd>Там же: <a href="#r12">R12</a>, узнают ли меня.</dd>
+          <dt>13:30</dt><dd>Там же: <a href="#r05">R05</a>, позвони родным.</dd>
+          <dt>15:00</dt><dd>Точка №<mark class="ph">[номер точки 4]</mark>: <a href="#r16">R16</a>, как выбрать столовую.</dd>
+          <dt>16:00</dt><dd>Первая точка или офис: 20 минут интервью, потом <a href="#r08">R08</a> и <a href="#r15">R15</a> — история, части 1 и 2.</dd>
+        </dl>
+      </li>
+      <li class="step">
+        <span class="when">Дни 4–18</span>
+        <h3>Выкладываем партию 1: R02 … R16, по одному в день</h3>
+        <ul class="checks">
+          <li>День 4: монтируем R02–R04 и выкладываем R02.</li>
+          <li>Дальше каждый день — один ролик по <a href="#calendar">календарю</a>.</li>
+          <li>В запасе всегда минимум 3 готовых ролика. Если меньше — монтаж важнее новых съёмок.</li>
+        </ul>
+      </li>
+      <li class="step">
+        <span class="when">Дни 12–13</span>
+        <h3>Съёмки В и Г: партия 2</h3>
+        <p class="tl-day">День 12 · Съёмка В</p>
+        <dl class="tl">
+          <dt>05:45</dt><dd><a href="#r25">R25</a>: шесть утра, кто уже на работе.</dd>
+          <dt><mark class="ph">[время поставки]</mark></dt><dd><a href="#r23">R23</a>: фура. Если поставка в другой день — снимаем в день поставки.</dd>
+          <dt>10:00</dt><dd><a href="#r19">R19</a>: худший отзыв.</dd>
+          <dt>11:30</dt><dd><a href="#r24">R24</a>: апа пробует плов.</dd>
+          <dt>13:30</dt><dd><a href="#r18">R18</a>: минимум против максимума.</dd>
+          <dt>15:00</dt><dd><a href="#r21">R21</a>: вопросы от команды.</dd>
+          <dt>15:45</dt><dd><a href="#r26">R26</a>: сколько зарабатывает повар.</dd>
+        </dl>
+        <p class="tl-day">День 13 · Съёмка Г</p>
+        <dl class="tl">
+          <dt>10:00</dt><dd><a href="#r28">R28</a>: сколько стоит открыть столовую.</dd>
+          <dt>11:30</dt><dd><a href="#r20">R20</a>: куда уходят 100 сом.</dd>
+          <dt>12:00</dt><dd><a href="#r22">R22</a>: история, часть 3.</dd>
+          <dt>15:00</dt><dd><a href="#r17">R17</a>: 10 такси.</dd>
+          <dt>17:00</dt><dd><a href="#r27">R27</a>: сюрприз повару.</dd>
+        </dl>
+        <p class="result">Ещё две короткие съёмки: день 26 — <a href="#r29">R29</a> (30 минут), день 28 — досъёмка <a href="#r30">R30</a> (1 час).</p>
+      </li>
+      <li class="step">
+        <span class="when">Дни 19–32</span>
+        <h3>Выкладываем партию 2: R17 … R30</h3>
+        <ul class="checks">
+          <li>Тот же ритм: один ролик в день, запас — минимум 3 готовых.</li>
+        </ul>
+      </li>
+      <li class="step">
+        <span class="when">Дни 8, 15, 22, 29</span>
+        <h3>Разбор недели — 30 минут</h3>
+        <ul class="checks">
+          <li>Продюсер сверяет цифры и принимает решения по правилам раздела <a href="#metrics">«Метрики»</a>.</li>
+          <li>Азизу — три строки итога: лучший ролик, худший ролик, что меняем.</li>
+        </ul>
+      </li>
+      <li class="step">
+        <span class="when">День 33</span>
+        <h3>Итоги месяца</h3>
+        <ul class="checks">
+          <li>Цифры всех 30 роликов — в таблице.</li>
+          <li>Подписчики: цель 4 000–4 500.</li>
+          <li>Две рубрики с лучшими цифрами — главные во втором месяце.</li>
+          <li>В первую неделю второго месяца — повтор <a href="#r12">R12</a> «Узнают ли меня».</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="page-sec" id="calendar">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Календарь</h2>
+      <p class="sec-note">День 1 — день пилота. Ролики про еду и цены выходят в 11:30, перед обедом. Остальные — в 19:30. Через две недели время сверяем со статистикой и поправляем.</p>
+    </div>
+    <ol class="cal" id="cal-list"></ol>
+  </div>
+</section>
+
+<section class="page-sec" id="rules">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Правила каждого ролика</h2>
+      <p class="sec-note">Эти правила действуют во всех 30 роликах. По ним Азиза узнают с первой секунды.</p>
+    </div>
+    <ol class="rule-list">
+      <li><div><b>Первые 2 секунды — сразу действие или вопрос.</b><span class="hint">Никаких «всем привет, меня зовут». Зритель решает за 2 секунды, листать или нет.</span></div></li>
+      <li><div><b>Плашка с 0:00 до 0:03: «Азиз байке · основатель Buffet».</b><span class="hint">Сверху слева, в безопасной зоне. Одинаковая во всех роликах.</span></div></li>
+      <li><div><b>В каждом ролике Азиз пробует еду.</b><span class="hint">Хозяин пробует первым — это главный знак образа.</span></div></li>
+      <li><div><b>Каждая цифра — на экране, крупно, жёлтым.</b><span class="hint">«150 кг», «[цена] сом», «8/10». Цифры держат внимание лучше слов.</span></div></li>
+      <li><div><b>Субтитры на русском — всегда.</b><span class="hint">Азиз говорит на кыргызском или на русском, как ему удобно. Субтитры открывают ролик для всего Бишкека и Казахстана.</span></div></li>
+      <li><div><b>Финал всегда один: ложка вверх и «Баарыңарга аш болсун!».</b><span class="hint">Субтитр: «Всем приятного аппетита!». Это фирменная фраза Азиза — по ней его запоминают.</span></div></li>
+      <li><div><b>Последняя секунда — плашка «Завтра: …».</b><span class="hint">Тема следующего ролика. Текст плашки уже есть в каждом сценарии. Так зритель подписывается, чтобы не пропустить.</span></div></li>
+      <li><div><b>Длина — 20–60 секунд.</b><span class="hint">Можно короче — делаем короче.</span></div></li>
+      <li><div><b>Хвалим по имени. Замечание — без имени и без лица.</b></div></li>
+      <li><div><b>Ничего не играем.</b><span class="hint">Не получилось — переснимаем. Не понравилось Азизу — не выкладываем.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page-sec" id="reels">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>30 рилсов</h2>
+    </div>
+    <div class="legend">
+      <p><mark class="ph">[Жёлтым в скобках]</mark> — цифра или имя, которое знает только Азиз. Заполняем по <a href="#facts">«Листу цифр»</a> до съёмки.</p>
+      <p>Нажмите на ролик — откроется полный сценарий. Кнопки «Снято», «Смонтировано», «Выложено» запоминаются только на этом устройстве.</p>
+    </div>
+    <div class="controls">
+      <div class="filter-row" id="f-batch" role="group" aria-label="Партия"></div>
+      <div class="filter-row" id="f-rubric" role="group" aria-label="Рубрика"></div>
+      <div class="ctrl-row">
+        <p class="progress" id="progress"></p>
+        <button type="button" class="btn" id="toggle-all">Развернуть все</button>
+      </div>
+    </div>
+    <div class="reels" id="reel-list"></div>
+
+    <div class="sub" id="backups">
+      <h3>Запасные ролики</h3>
+      <p class="sec-note">Снимаем, если ролик из плана снять нельзя: нет согласия, другое правило по остаткам, другая погода. Запасной ролик встаёт на день выпавшего.</p>
+      <div class="backups" id="backup-list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="aziz">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Азизу байке</h2>
+      <p class="sec-note">Всё, что нужно знать в кадре. Сценарии учить не нужно.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>10 правил в кадре</h3>
+        <ol class="rule-list" style="margin-top:12px">
+          <li><div>Текст не учите. Говорите смысл своими словами. Дословно — только первая фраза ролика и финал.</div></li>
+          <li><div>Первые слова — сразу к делу. Без «всем привет, меня зовут».</div></li>
+          <li><div>Говорите на кыргызском или на русском — как в жизни. Можно смешивать. Субтитры сделаем.</div></li>
+          <li><div>В каждом ролике пробуйте еду. Реакция — честная.</div></li>
+          <li><div>Хвалите по имени. Замечание — без имени и без лица.</div></li>
+          <li><div>Ничего не играйте. Не получилось — переснимем. Не понравилось — не выложим.</div></li>
+          <li><div>Когда говорите зрителю — смотрите в объектив, а не на экран телефона.</div></li>
+          <li><div>Одна мысль — одно короткое предложение.</div></li>
+          <li><div>Финал всегда один: ложка вверх и «Баарыңарга аш болсун!».</div></li>
+          <li><div>Ошиблись — замолчите на 2 секунды и скажите фразу заново. Мобилограф вырежет.</div></li>
+        </ol>
+      </div>
+      <div style="display:grid;gap:16px;align-content:start">
+        <div class="box">
+          <h4 style="margin-top:0">Фраза и жест</h4>
+          <p class="big-phrase">Баарыңарга аш болсун!</p>
+          <p>Субтитр: «Всем приятного аппетита!». Жест: ложка или пиала вверх, взгляд в объектив. Если фраза звучит для вас неестественно — скажите продюсеру до пилота. Меняем один раз и навсегда.</p>
+        </div>
+        <div class="box">
+          <h4 style="margin-top:0">Если не знаете, что сказать</h4>
+          <ul>
+            <li>Скажите, что видите, одной фразой: «Рис рассыпчатый».</li>
+            <li>Скажите, что чувствуете: «Вот это — правильно» или «Это исправим».</li>
+            <li>Просто пробуйте и молчите 2 секунды. Жующий хозяин — тоже кадр.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4 style="margin-top:0">Сколько времени нужно</h4>
+          <p>4 больших съёмочных дня в месяц (дни 2, 3, 12, 13) и 3 коротких выхода по 30–60 минут (дни 1, 26, 28).</p>
+        </div>
+        <div class="box">
+          <h4 class="neg-h" style="margin-top:0">Нельзя в кадре</h4>
+          <ul class="neg-list">
+            <li>Конкуренты и чужие заведения.</li>
+            <li>Политика.</li>
+            <li>Цифры, которые вы не одобрили.</li>
+            <li>Обещания, которые не выполните.</li>
+            <li>Ругать сотрудника по имени или с лицом.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="camera">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Мобилографу: съёмка</h2>
+      <p class="sec-note">Снимаем на телефон. Главное — чистый звук, свет на лице и запас кадра под интерфейс Instagram.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Техника</h3>
+        <ul class="checks" style="margin-top:10px">
+          <li>Телефон с камерой 4K — основная камера (камера А).</li>
+          <li>Второй телефон и маленький штатив — камера Б: реакции людей и таймлапсы. Подойдёт старый телефон.</li>
+          <li>Радиопетличка с двумя передатчиками: один всегда на Азизе, второй — для гостя или повара.</li>
+          <li>Напольный штатив для таймлапсов (R02, R06, R14, R23).</li>
+          <li>Павербанк, салфетка из микрофибры, 64 ГБ свободной памяти.</li>
+        </ul>
+        <h4>Настройки</h4>
+        <ul>
+          <li>Только вертикально, 9:16.</li>
+          <li>В помещении — 4K, 25 кадров в секунду. Лампы в столовых мерцают при 30 к/с. На iPhone: Настройки → Камера → Запись видео → включить форматы PAL → 4K 25 к/с.</li>
+          <li>На улице днём — 4K, 30 к/с.</li>
+          <li>Замедление (пар, плов, монеты) — только у окна при дневном свете.</li>
+          <li>Долгое нажатие на лицо — блокировка фокуса и экспозиции.</li>
+          <li>Ходьба рядом с Азизом: режим «Экшн» на iPhone 14 и новее. Если его нет — двумя руками, локти прижаты, шаг мягкий.</li>
+        </ul>
+        <h4>Звук</h4>
+        <ul>
+          <li>Петличка — на 20 см ниже подбородка, кабель под одеждой.</li>
+          <li>Перед каждым дублем — 3 секунды тишины.</li>
+          <li>Важные фразы — подальше от вытяжки и фритюра.</li>
+          <li>На каждой новой локации — 10 секунд записи фона без слов (для монтажа).</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Свет и кадр</h3>
+        <ul style="margin-top:10px">
+          <li>Азиз стоит лицом к окну или к свету. Спиной к окну не снимать.</li>
+          <li>Глаза Азиза — на верхней трети экрана.</li>
+          <li>Сверху и снизу оставлять запас: там интерфейс Instagram (схема — в разделе <a href="#edit">«Монтаж»</a>).</li>
+          <li>Широкий угол 0.5× — только для общих планов. Лицо на 0.5× не снимать.</li>
+        </ul>
+        <h4>Перебивки и дубли</h4>
+        <ul>
+          <li>На каждой локации — 5 кадров по 5 секунд: общий план, средний план, еда крупно, руки, пар или огонь.</li>
+          <li>Каждую сцену — 2 дубля.</li>
+          <li>Первую реакцию людей не переснимать никогда. Её пишет камера Б.</li>
+          <li>На каждой съёмке — 3–5 секунд «жизни между кадрами»: машина, дорога, звонки. Это материал для R30.</li>
+        </ul>
+        <h4>Файлы</h4>
+        <ul>
+          <li>Сразу после съёмки — в Google Drive, папка ролика.</li>
+          <li>Имя файла: R07_А_дубль2 — номер ролика, камера, дубль.</li>
+          <li>Не пересылать через Telegram и WhatsApp: они сжимают качество.</li>
+        </ul>
+        <div class="box" style="margin-top:18px">
+          <h4 style="margin-top:0">Перед каждой сценой</h4>
+          <ul class="checks">
+            <li>Объектив чистый (на кухне — жир на стекле).</li>
+            <li>Петличка включена, звук проверен в наушниках.</li>
+            <li>9:16, 4K, 25 к/с в помещении.</li>
+            <li>Фокус и экспозиция заблокированы на лице.</li>
+            <li>Заряд больше 50%, память свободна.</li>
+            <li>Люди в кадре дали согласие.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="edit">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Монтаж</h2>
+      <p class="sec-note">CapCut или любой редактор. Один стиль во всех 30 роликах.</p>
+    </div>
+    <div class="with-frame">
+      <div>
+        <ol class="rule-list">
+          <li><div><b>Черновик.</b> Вырезать паузы, «э-э», повторы.</div></li>
+          <li><div><b>Крючок.</b> Самый сильный момент — в первые 2 секунды. Если начало слабое, переставить.</div></li>
+          <li><div><b>Плашка 0:00–0:03:</b> «Азиз байке · основатель Buffet». Белый текст на тёмной полупрозрачной подложке, сверху слева.</div></li>
+          <li><div><b>Субтитры на русском</b> — весь ролик. Белые, жирные, чёрная обводка, максимум 2 строки, по центру. Если Азиз говорит по-кыргызски — переводим. Автосубтитры проверять глазами.</div></li>
+          <li><div><b>Цифры</b> — крупно, жёлтым, со звуком «дзынь».</div></li>
+          <li><div><b>Ритм.</b> Склейка каждые 1–3 секунды. На главной фразе — лёгкий наезд до 110%.</div></li>
+          <li><div><b>Музыка</b> — тихо, на 20–25 дБ ниже голоса. В роликах про звук кухни (R02, R14, R23) натуральный звук громче музыки. Трендовые звуки — только из библиотеки Instagram при публикации.</div></li>
+          <li><div><b>Финал:</b> ложка вверх и фраза, субтитр «Всем приятного аппетита!».</div></li>
+          <li><div><b>Последняя секунда:</b> плашка «Завтра: …» — текст есть в каждом сценарии.</div></li>
+          <li><div><b>Обложка:</b> кадр с лицом Азиза и текст из сценария. Текст — в центре: сетка профиля обрезает обложку до 3:4 (пунктир на макете обложки в каждой карточке).</div></li>
+          <li><div><b>Экспорт:</b> 1080×1920, максимальное качество, без заставки и водяного знака CapCut.</div></li>
+          <li><div><b>Проверка:</b> посмотреть на телефоне без звука — понятно ли по субтитрам. Потом со звуком.</div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="frame" role="img" aria-label="Схема кадра 9:16: где можно ставить текст">
+          <div class="zone z-top">профиль и звук</div>
+          <div class="f-plate">Азиз байке · основатель Buffet</div>
+          <div class="f-num">150 КГ</div>
+          <div class="f-sub">Свежий — рассыпчатый, зерно блестит</div>
+          <div class="zone z-right">кнопки</div>
+          <div class="zone z-bottom">подпись и описание</div>
+        </div>
+        <p class="frame-cap">Штриховка — зоны интерфейса Instagram. Текст туда не ставим: сверху 12%, снизу 25%, справа 12% кадра.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="post">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Публикация</h2>
+      <p class="sec-note">Делает продюсер. Один и тот же порядок для каждого ролика.</p>
+    </div>
+    <ol class="rule-list">
+      <li><div>Instagram → «+» → Reels → выбрать готовый файл.</div></li>
+      <li><div>Обложка: выбрать кадр или загрузить из галереи. Проверить, как она выглядит в сетке профиля.</div></li>
+      <li><div>Подпись — из карточки ролика, кнопка «Скопировать подпись». Главное — в первых двух строках.</div></li>
+      <li><div>Место: адрес точки или «Бишкек».</div></li>
+      <li><div>Пригласить соавтора — аккаунт Buffet. Во всех роликах, где есть точка. Ролик покажется и подписчикам Buffet.</div></li>
+      <li><div>Включить показ в Facebook.</div></li>
+      <li><div>Опубликовать во время из календаря: 11:30 или 19:30.</div></li>
+      <li><div>Первый час: ответить на каждый комментарий. Закрепить лучший.</div></li>
+      <li><div>Поделиться роликом в Stories с подписью «Новое видео».</div></li>
+      <li><div>Через час: тот же файл — в YouTube Shorts (название = текст обложки) и в TikTok для Казахстана. Файл без водяных знаков.</div></li>
+      <li><div>Через 24 часа: записать цифры в таблицу раздела <a href="#metrics">«Метрики»</a>.</div></li>
+    </ol>
+    <div class="box" style="margin-top:20px">
+      <h4 style="margin-top:0">Хэштеги</h4>
+      <p>5 штук, они уже есть в каждой подписи. Больше не нужно.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="facts">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Лист цифр</h2>
+      <p class="sec-note">Пройти с Азизом за 40 минут до пилота. Ответы впишите в сценарии вместо жёлтых скобок. Кнопка копирует все вопросы — удобно отправить Азизу в WhatsApp.</p>
+    </div>
+    <button type="button" class="btn copy" data-copy="facts" style="margin-bottom:16px">Скопировать все вопросы</button>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ролик</th><th>Что узнать у Азиза</th></tr></thead>
+        <tbody id="facts-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="metrics">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Метрики</h2>
+      <p class="sec-note">Где смотреть: открыть ролик → «Статистика». Записывать через 24 часа после выхода.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Что записываем</h3>
+        <ul style="margin-top:10px">
+          <li><b>Просмотры</b> за 24 часа.</li>
+          <li><b>Доля неподписчиков</b> в охвате, %. Главная цифра роста: столько людей увидели Азиза впервые.</li>
+          <li><b>Среднее время просмотра</b>, секунд.</li>
+          <li><b>Пересылки</b> — значок самолётика. Сильнее всего толкают ролик к новым людям.</li>
+          <li><b>Сохранения.</b></li>
+          <li><b>Подписки</b> с ролика.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Как принимаем решения</h3>
+        <ol class="rule-list" style="margin-top:10px">
+          <li><div>Медиана — средний по счёту ролик, если выстроить все по просмотрам. Сравниваем каждый ролик с ней.</div></li>
+          <li><div>Каждые 7 дней сравниваем рубрики по двум цифрам: доля неподписчиков и подписки с ролика.</div></li>
+          <li><div>Ролик за 48 часов набрал в 2 раза больше медианы — закрепить в профиле, снять продолжение, продвинуть рекламой на Бишкек и Казахстан (бюджет — у Азиза).</div></li>
+          <li><div>Три ролика одной рубрики подряд ниже медианы — сначала меняем первые 2 секунды, потом формат.</div></li>
+          <li><div>Среднее время просмотра меньше половины длины ролика — делаем ролики короче.</div></li>
+          <li><div>День 33: цель 4 000–4 500 подписчиков. Ниже 3 800 — меняем две худшие рубрики. Выше 4 500 — держим курс.</div></li>
+        </ol>
+      </div>
+    </div>
+    <h4>Таблица</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ролик</th><th>Тема</th><th>Просмотры</th><th>Неподписчики, %</th><th>Ср. время</th><th>Пересылки</th><th>Сохранения</th><th>Подписки</th></tr></thead>
+        <tbody id="metrics-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="profile">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Профиль</h2>
+      <p class="sec-note">Человек пришёл из ролика и за 3 секунды решает, подписаться ли. Профиль должен ответить: кто это и что тут будет.</p>
+    </div>
+    <div class="cols">
+      <div style="display:grid;gap:16px;align-content:start">
+        <div>
+          <h4 style="margin-top:0">Имя (поле «Имя»)</h4>
+          <p class="copy-block" id="copy-name">Азиз байке | основатель Buffet</p>
+          <button type="button" class="btn copy" data-copy="name" style="margin-top:8px">Скопировать</button>
+        </div>
+        <div>
+          <h4 style="margin-top:0">Описание</h4>
+          <p class="copy-block" id="copy-bio">Основатель Buffet и Daily Market
+20 точек в Кыргызстане и Казахстане
+Каждую проверяю сам · новое видео каждый день</p>
+          <button type="button" class="btn copy" data-copy="bio" style="margin-top:8px">Скопировать</button>
+        </div>
+      </div>
+      <div>
+        <ul class="checks">
+          <li><b>Аватар:</b> лицо крупно, улыбка, однотонный светлый фон. Без логотипа и без очков.</li>
+          <li><b>Ссылка:</b> <mark class="ph">[ссылка на адреса точек]</mark> — 2ГИС или сайт Buffet.</li>
+          <li><b>Закреплённые ролики:</b> R01 — с дня 1, R08 — с дня 10, третий — лучший по охвату, с дня 18.</li>
+          <li><b>Актуальное в Stories:</b> «Точки» — адреса всех точек, «Меню» — фото меню с ценами.</li>
+          <li><b>Старые посты:</b> не удаляем. Новые ролики сами задают вид профиля за 2 недели.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="consent">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Согласия и запреты</h2>
+      <p class="sec-note">Без согласия человека нет в кадре. Это защищает и людей, и бизнес Азиза.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Сотрудники</h3>
+        <p style="margin:8px 0 10px">Общее согласие подписывают все сотрудники всех точек до первой съёмки. Дату съёмки не называем — иначе пропадёт эффект внезапной проверки.</p>
+        <p class="copy-block" id="copy-consent">Согласие на съёмку
+Я, ______________________ (ФИО), работаю в ______________________ (точка).
+Согласен(на), что меня могут снимать на работе и публиковать эти видео в Instagram, YouTube, TikTok и Facebook Азиза Насирдинова и Buffet.
+Я могу письменно отозвать согласие. После этого новые видео со мной не публикуются.
+Дата: __________   Подпись: __________</p>
+        <button type="button" class="btn copy" data-copy="consent" style="margin-top:8px">Скопировать текст</button>
+        <h3 style="margin-top:26px">Гости</h3>
+        <ul style="margin-top:8px">
+          <li>На кассе табличка: «Сегодня идёт съёмка».</li>
+          <li>Вопрос на камеру: «Можно вас снять для Instagram Азиза байке?». Ответ «да» должен остаться в записи.</li>
+          <li>Нет согласия — человека нет в кадре или лицо размыто.</li>
+          <li>Дети — только рядом с родителями и с их согласия. Крупно не снимаем.</li>
+          <li>Номера машин и телефонов — размываем.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="neg-h">Запреты для всех роликов</h3>
+        <ul class="neg-list" style="margin-top:10px">
+          <li>Конкуренты — не называем и не показываем.</li>
+          <li>Санитарные проблемы — не публикуем, решаем без камеры.</li>
+          <li>Еда в мусорном ведре — никогда в кадре. Вся еда со съёмок достаётся команде.</li>
+          <li>Сотрудника не ругаем по имени и с лицом.</li>
+          <li>Цифры — только одобренные Азизом.</li>
+          <li>Политика — никогда.</li>
+          <li>Религия и здоровье — только если Азиз сам так решит.</li>
+          <li>Роскошь напоказ — нет. Образ — «свой человек».</li>
+          <li>Обещания на камеру — только те, что точно выполним.</li>
+          <li>Логотипы поставщиков, накладные и закупочные цены — не в кадре.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-sec" id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Бюджет</h2>
+      <p class="sec-note" id="budget-sum"></p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ролик</th><th>Тема</th><th>Расход</th></tr></thead>
+        <tbody id="budget-body"></tbody>
+      </table>
+    </div>
+    <h4>Техника — один раз, если её нет</h4>
+    <ul>
+      <li>Радиопетличка с двумя передатчиками.</li>
+      <li>Напольный штатив.</li>
+      <li>Второй телефон для камеры Б — можно старый.</li>
+      <li>Мелочи для отдельных роликов: белые перчатки (R04), коробка для записок (R21), 10 монет по 10 сом (R20).</li>
+    </ul>
+    <p class="sec-note" style="margin-top:14px">Продвижение лучших роликов рекламой — отдельная строка у Азиза, не из гонорара продюсера.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">План первого месяца · Instagram @nasirdinov_a · версия 1, октябрь 2026</div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var RUB = {
+  prov:{name:"Байке приехал", color:"var(--r-prov)"},
+  big:{name:"По-большому", color:"var(--r-big)"},
+  price:{name:"Сколько?", color:"var(--r-price)"},
+  exp:{name:"Эксперимент", color:"var(--r-exp)"},
+  know:{name:"Хозяин объясняет", color:"var(--r-know)"},
+  story:{name:"История Буфета", color:"var(--r-story)"},
+  team:{name:"Личное", color:"var(--r-team)"}
+};
+var BATCH = {pilot:"Пилот", b1:"Партия 1", b2:"Партия 2"};
+
+var REELS = [
+{
+  id:"r01", code:"R01", title:"Байке приехал. Точка №[номер точки]", short:"байке приехал без предупреждения",
+  rubric:"prov", batch:"pilot", pub:1, time:"19:30", len:"45–55 сек", cost:"free", budget:"0 сом",
+  shoot:"Пилот · день 1 · 11:00–11:40",
+  why:"Главная серия блога. Зритель не знает, что найдёт хозяин, поэтому досматривает до вердикта. Комментарии «приезжайте к нам» дают темы для следующих выпусков.",
+  who:["Азиз","Мобилограф","Управляющий точки — в кадре только с подписанным согласием","Повара и кассир — на фоне, общее согласие собрано заранее"],
+  where:"Точка, где Азиз давно не был: не лучшая и не худшая. 11:00–11:40 — еда уже готова, зал ещё полупустой.",
+  props:["Белые бумажные салфетки (с точки)","3 чистые ложки","Петличка на Азизе"],
+  prep:["Управляющий не знает о визите. Знает только продюсер.","Мобилограф пишет в машине 10 секунд пробного звука и слушает в наушниках.","Номер точки и имя управляющего — в «Листе цифр».","Заранее решить с Азизом, что он скажет, если найдётся проблема: что исправить и к какому дню."],
+  beats:[
+    ["0:00–0:03","Машина у точки. Хлопает дверь. Азиз идёт ко входу. Камера 1×, на уровне груди: сначала сбоку, у двери обгоняет и идёт спиной вперёд.","«Точка номер [номер точки]. Меня тут сегодня не ждут.»","ТОЧКА №[номер точки] · БЕЗ ПРЕДУПРЕЖДЕНИЯ"],
+    ["0:03–0:07","Азиз заходит. Первая реакция персонала. Не останавливать и не переснимать — это самый ценный кадр.","«Салам! Работайте-работайте, я только посмотреть.»",""],
+    ["0:07–0:17","Раздача. Берёт чистую ложку, пробует плов. Крупно: рис на ложке, потом лицо.","«Начинаю всегда с плова.» (жуёт) Дальше своими словами: рис, мясо, вкус.","ВКУС: ✓ или ✗"],
+    ["0:17–0:27","Холодильник с заготовками. Открывает, читает бирку с датой. Крупно бирка.","«В холодильнике смотрю одно: подписано или нет. Что и когда приготовили. (читает) Сегодня, [время на бирке]. Хорошо.» Если бирки нет: «Без подписи. Это убираем.»","СВЕЖЕСТЬ: ✓ или ✗"],
+    ["0:27–0:35","Зал. Проводит белой салфеткой по краю стола или по подоконнику. Показывает салфетку в камеру крупно.","«И последнее — чистота.» Показывает салфетку: «Чисто» или «Вот это — исправить».","ЧИСТОТА: ✓ или ✗"],
+    ["0:35–0:47","Азиз и управляющий рядом, средний план. Рукопожатие.","«[Имя управляющего], точка — [оценка] из 10. За [что хорошо] — спасибо. [Что исправить] — до пятницы. Приеду, проверю.»","ОЦЕНКА БАЙКЕ: [оценка]/10"],
+    ["0:47–0:52","Азиз смотрит в объектив, поднимает ложку.","«Какую точку проверить следующей — пишите в комментариях. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Вывеска точки снаружи","Руки повара на раздаче","Пар над казаном","Бирка на контейнере крупно","Салфетка в руке крупно","Общий план зала: лица — только тех, кто согласился"],
+  edit:["Первые 2 секунды без музыки: только хлопок двери и шаги.","На каждую галочку — короткий звук «дзынь».","Оценку — крупно, жёлтым.","Если проблема нашлась — оставить её в ролике. Это и есть сюжет."],
+  cover:"Меня тут не ждут",
+  caption:"Приехал без предупреждения на точку №[номер точки] Buffet. Проверил три вещи: вкус, холодильник, чистоту. Итог — [оценка]/10.\nКакую точку проверить следующей? Пишите адрес в комментариях 👇\n#бишкек #столовая #плов #кыргызстан #buffet",
+  planB:["Персонал заметил машину и успел подготовиться — так и сказать в кадре: «Меня заметили с парковки. Ладно, проверим всё равно».","Всё идеально — вердикт 10/10 и фраза: «Сегодня придраться не к чему. Следующую точку выберете вы».","Нашлась серьёзная санитарная проблема — ролик не публикуем. Азиз решает вопрос без камеры, пилот снимаем на другой точке."],
+  dont:["Не называть по имени сотрудника, у которого нашли проблему.","Не предупреждать управляющего.","Не переснимать вход «покрасивее»."],
+  after:"После публикации закрепить в профиле.",
+  count:"сколько досмотрели до вердикта, долю неподписчиков, сколько адресов точек написали в комментариях."
+},
+{
+  id:"r02", code:"R02", title:"[150] кг плова за 30 секунд", short:"[150] кг плова в одном казане",
+  rubric:"big", batch:"b1", pub:4, time:"19:30", len:"25–30 сек", cost:"free", budget:"0 сом — обычная утренняя закладка",
+  shoot:"Съёмка А · день 2 · 05:45–10:30. Штатив пишет весь процесс, Азиз нужен в начале и в финале.",
+  why:"Зрелище без слов: досматривают и пересматривают. Понятно без языка — работает и в Казахстане.",
+  who:["Азиз — начало и финал","Главный повар по плову — с согласием","Мобилограф"],
+  where:"Кухня главной точки, где готовят самый большой казан. Утро, время закладки — [время закладки].",
+  props:["Напольный штатив — обязательно","Второй телефон для таймлапса","Мешок риса с видимой надписью веса","Весы для мяса, если есть"],
+  prep:["Узнать у повара цифры этой закладки: кг мяса, лука, моркови, риса, литры масла, часы готовки, порции. Вписать в «Лист цифр».","Повар готовит как всегда — не ускорять и не замедлять ради камеры.","Штатив ставим так, чтобы казан был виден целиком, а телефон не стоял над огнём и паром."],
+  beats:[
+    ["0:00–0:02","Сверху: пустой огромный казан. Азиз хлопает ладонью по холодному краю.","«Это один казан. Смотрите, что в него влезает.»","[150] КГ ПЛОВА"],
+    ["0:02–0:20","Таймлапс со штатива, камеру не трогать: масло, мясо, лук, морковь, рис, вода, крышка, готовый плов. Каждая закладка — своя цифра.","Без слов. Только натуральный звук: шипение масла, стук капкира.","МЯСО — [кг мяса] КГ · ЛУК — [кг лука] КГ · МОРКОВЬ — [кг моркови] КГ · РИС — [кг риса] КГ · МАСЛО — [литров масла] Л · [часов готовки] Ч"],
+    ["0:20–0:26","Повар снимает крышку, поднимается пар. Азиз накладывает первую порцию и пробует.","Коротко, с набитым ртом: «Вот это — правильно».","= [порций] ПОРЦИЙ"],
+    ["0:26–0:30","Азиз смотрит в объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Зира в ладони повара","Морковь соломкой крупно","Мясо падает в масло — снимать сбоку, не над казаном","Пар против света","Ряд тарелок перед раздачей"],
+  edit:["Таймлапс сжать до 15–18 секунд.","Цифра появляется ровно в момент каждой закладки.","Натуральный звук громче музыки.","Первая порция — замедленно, если снимали при дневном свете."],
+  cover:"[150] кг плова в одном казане",
+  caption:"Один казан — [порций] порций. Столько плова мы готовим каждое утро на точке [адрес главной точки].\nКак думаете, за сколько его съедают? 👇\n#плов #бишкек #казан #столовая #кыргызстан",
+  planB:["В этот день казан меньше 150 кг — пишем реальную цифру. Вверх не округлять.","Таймлапс сбился, телефон сдвинули — монтируем обычными кадрами: каждая закладка по 2 секунды."],
+  dont:["Не ставить телефон над огнём и маслом.","Повар — в шапочке и фартуке, иначе кадр не используем.","Не говорить, что готовил Азиз, если готовил повар."],
+  count:"пересылки и среднее время просмотра. Если оно больше длины ролика — ролик пересматривают."
+},
+{
+  id:"r03", code:"R03", title:"Угадай цену обеда на четверых", short:"угадайте цену обеда на четверых",
+  rubric:"price", batch:"b1", pub:5, time:"11:30", len:"20–25 сек", cost:"food", budget:"Себестоимость 4 обедов. После съёмки еду съедает команда.",
+  shoot:"Съёмка А · день 2 · 11:10–11:30",
+  why:"Каждый хочет угадать и пишет цифру в комментариях. Ответ в конце держит до последней секунды.",
+  who:["Азиз","Кассир — с согласием","Мобилограф"],
+  where:"Главная точка: касса и стол рядом. 11:10–11:30, до обеденного пика.",
+  props:["Поднос и стол на четверых","Обед на четверых: два плова, лагман, четыре самсы, два салата, четыре компота","Чек из кассы"],
+  prep:["Посчитать точную сумму по меню, вписать в «Лист цифр».","Собрать стол так, чтобы сверху было видно каждое блюдо."],
+  beats:[
+    ["0:00–0:02","Сверху: полный стол на четверых.","«Обед на четверых. Сколько?»","УГАДАЙ ЦЕНУ 👇"],
+    ["0:02–0:12","Азиз быстро касается рукой каждого блюда.","«Два плова, лагман, четыре самсы, салаты, четыре компота. Пишите цифру в комментариях — потом проверите себя.»","Названия блюд всплывают по одному"],
+    ["0:12–0:18","Касса. Кассир пробивает, Азиз смотрит на экран кассы. 1 секунда тишины.","Кассир: «[сумма за 4] сом». Азиз — реакция своими словами.","[сумма за 4] СОМ"],
+    ["0:18–0:23","Азиз садится, пробует лагман, в объектив, ложка вверх.","«Это [сумма на 1] сом на человека. Баарыңарга аш болсун!»","= [сумма на 1] СОМ НА ЧЕЛОВЕКА"]
+  ],
+  broll:["Пар над лагманом","Самса ломается крупно","Компот наливают","Чек выходит из кассы"],
+  edit:["Сумму не показывать до 0:12 — ни в кадре, ни на обложке.","На паузе у кассы — звук «тик-так».","Итоговая цифра — крупно, жёлтым, со звуком «дзынь»."],
+  cover:"Обед на 4: сколько?",
+  caption:"Обед на четверых в Buffet. Сколько стоит? Пишите свою цифру — ответ в видео.\nКто первым угадает точно — обед за мой счёт, напишу в директ.\n#бишкек #обед #столовая #цены #кыргызстан",
+  planB:["В меню нет каких-то блюд — собрать обед из того, что есть, и перечислить в кадре то, что на столе."],
+  dont:["Только реальные цены из меню.","Еду после съёмки не выбрасывать."],
+  after:"В день выхода написать в директ первому, кто угадал точно.",
+  count:"сколько комментариев с цифрами."
+},
+{
+  id:"r04", code:"R04", title:"Белая перчатка", short:"белая перчатка: найду пыль — мою пол сам",
+  rubric:"prov", batch:"b1", pub:6, time:"19:30", len:"35–45 сек", cost:"buy", budget:"Белые перчатки + торт команде, если всё чисто",
+  shoot:"Съёмка Б · день 3 · 09:30–10:30",
+  why:"Ставка в первой фразе — «найду пыль, мою пол сам» — держит до конца. Хозяин, готовый мыть пол, — это и есть «свой человек».",
+  who:["Азиз","Мобилограф","Управляющий точки — с согласием"],
+  where:"Точка №[номер точки 2], 10:00–10:30.",
+  props:["Белые хлопковые перчатки","Швабра и ведро — на точке","Торт — заранее в машине"],
+  prep:["Управляющий не знает о визите.","Торт лежит в машине. Достаём, только если всё чисто."],
+  beats:[
+    ["0:00–0:03","У входа Азиз натягивает белую перчатку и щёлкает ей. Крупно руки, потом лицо.","«Правило простое: найду пыль — мою пол сам.»","НАЙДУ ПЫЛЬ — МОЮ САМ"],
+    ["0:03–0:08","Заходит, здоровается с командой.","«Салам! Не пугайтесь — я с перчаткой.»",""],
+    ["0:08–0:25","Три места: верх холодильной витрины, подоконник, нижняя полка у раздачи. После каждого — палец в камеру крупно.","«Первое… (показывает) чисто. Второе… чисто. А вот третье…»","1 ✓ · 2 ✓ · 3 ?"],
+    ["0:25–0:38","Пыль есть: Азиз берёт швабру и 10 секунд моет пол, команда смеётся. Пыли нет: Азиз приносит из машины торт.","Пыль есть: «Сказал — сделал». Пыли нет: «Чисто. Значит, торт команде за мой счёт».","ПЫЛЬ НАЙДЕНА или ПЫЛИ НЕТ"],
+    ["0:38–0:43","Азиз в объектив, ложка вверх.","«На какой точке пройтись перчаткой в следующий раз? Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Перчатка натягивается — крупно","Палец по поверхности — медленно","Лица команды, когда появляется торт"],
+  edit:["Перед третьим местом — пауза и барабанная дробь.","Результат третьего места — стоп-кадр на полсекунды."],
+  cover:"Найду пыль — мою пол сам",
+  caption:"Пришёл на точку №[номер точки 2] с белой перчаткой. Уговор: найду пыль — мою пол сам.\nЧем закончилось — в видео. На какой точке проверить в следующий раз?\n#бишкек #чистота #столовая #buffet #кыргызстан",
+  planB:["Нашлась настоящая грязь — продукты, жир на кухне — ролик не публикуем. «Белую перчатку» снимаем на другой точке."],
+  dont:["Не подкладывать пыль специально.","Не снимать лицо сотрудника, отвечающего за уборку, если пыль нашлась."],
+  count:"сколько досмотрели до третьего места."
+},
+{
+  id:"r05", code:"R05", title:"Позвони родным — обед за мой счёт", short:"позвони родным — обед за мой счёт",
+  rubric:"exp", batch:"b1", pub:7, time:"19:30", len:"40–55 сек", cost:"food", budget:"3–5 обедов участников по цене меню",
+  shoot:"Съёмка Б · день 3 · 13:30–14:30",
+  why:"Сильная эмоция, понятная всем возрастам. Такие ролики пересылают со словами «позвони маме» — пересылки сильнее всего толкают ролик к новым людям.",
+  who:["Азиз","Мобилограф","3–5 гостей — только те, кто сказал «да» на камеру"],
+  where:"Точка №[номер точки 3], большой зал. 13:30–14:30: пик прошёл, гости сидят и не спешат.",
+  props:["Петличка на Азизе","Второй передатчик петлички — для гостя","Табличка у кассы «Сегодня идёт съёмка»"],
+  prep:["Азиз сначала подходит без камеры, объясняет и спрашивает согласие. Только потом — камера.","Гость звонит со своего телефона, по громкой связи."],
+  beats:[
+    ["0:00–0:03","Азиз подсаживается к гостю за стол. Камера 1×, через плечо гостя на Азиза.","«Предложение: звонишь родным, говоришь, что любишь, — и обед за мой счёт.»","ПОЗВОНИ РОДНЫМ = ОБЕД БЕСПЛАТНО"],
+    ["0:03–0:10","Реакция гостя: смущение, смех.","«Когда последний раз маме такое говорил?»",""],
+    ["0:10–0:35","2–3 звонка. Первым ставим самый сильный. Громкая связь, слышен голос родителя, лицо гостя крупно.","Гость говорит своими словами. Азиз молчит.","Субтитры всего разговора"],
+    ["0:35–0:41","Азиз оплачивает обеды на кассе.","«Это было легко, да?»",""],
+    ["0:41–0:46","Азиз в объектив, ложка вверх.","«Позвоните своим сегодня. Это бесплатно. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Телефон на столе: на экране «Апа», номер скрыт","Руки гостя","Общий план зала"],
+  edit:["Самый трогательный звонок — сразу после первой фразы.","Музыка спокойная и тихая. Трендовые звуки не ставить.","Номер телефона на экране — размыть."],
+  cover:"Позвони родным — обед бесплатно",
+  caption:"Предложил гостям Buffet: звоните родным, говорите, что любите, — обед за мой счёт.\nКому вы давно не звонили? Отправьте это видео тому, кому нужно позвонить.\n#бишкек #родители #мама #кыргызстан #buffet",
+  planB:["Никто не соглашается — Азиз звонит своей маме сам, если готов. Это тоже ролик."],
+  dont:["Не уговаривать тех, кто отказался.","Грустный разговор — болезнь, утрата — в ролик не берём.","Детей без родителей рядом не снимаем."],
+  count:"пересылки — главная цифра этого ролика."
+},
+{
+  id:"r06", code:"R06", title:"Миф: в столовой вчерашний плов", short:"правда ли, что в столовых вчерашний плов",
+  rubric:"know", batch:"b1", pub:8, time:"19:30", len:"30–40 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка А · день 2 · 06:00 и 11:00 + вечерний кадр управляющего",
+  why:"Спорная тема — много комментариев. Хозяин отвечает фактами на камеру, и растёт доверие к сети.",
+  who:["Азиз","Повар","Мобилограф","Управляющий — снимает вечерний кадр по инструкции"],
+  where:"Кухня главной точки. Три момента дня: закладка, первая порция, закрытие.",
+  props:["Часы на стене или телефон с часами в кадре","Штатив: один и тот же ракурс во всех трёх кадрах"],
+  prep:["Сначала узнать у Азиза настоящее правило по остаткам плова. Если плов переходит на следующий день — R06 не снимаем, вместо него — запасной ролик З1.","Время закладки, первой порции и закрытия — в «Лист цифр».","Показать управляющему, как снять вечерний кадр: тот же угол, 10 секунд, часы в кадре."],
+  beats:[
+    ["0:00–0:03","Азиз у раздачи с тарелкой плова.","«Говорят, в столовых плов вчерашний. Проверим.»","МИФ ИЛИ ПРАВДА?"],
+    ["0:03–0:11","Утро, часы в кадре: [время закладки]. Закладка в казан.","«[Время закладки] — закладываем. Вот время.»","[время закладки] — ЗАКЛАДКА"],
+    ["0:11–0:18","Тот же ракурс. Часы: [время первой порции]. Первая порция на тарелку.","«[Время первой порции] — первая порция.»","[время первой порции] — ПЕРВАЯ ПОРЦИЯ"],
+    ["0:18–0:28","Вечерний кадр управляющего: пустой казан или остатки, и что с ними делают по правилу.","Голос Азиза за кадром: «К [время закрытия] плов заканчивается. Остатки — [правило по остаткам]. На завтра не оставляем.»","НА ЗАВТРА — НЕ ОСТАВЛЯЕМ"],
+    ["0:28–0:35","Азиз пробует, в объектив, ложка вверх.","«Так что — миф. Баарыңарга аш болсун!»","МИФ ✗"]
+  ],
+  broll:["Часы крупно в каждом из трёх моментов","Чистый пустой казан вечером"],
+  edit:["Три момента — одинаковый ракурс, склейка по часам.","Слово «МИФ» в конце — с красным крестом."],
+  cover:"Вчерашний плов? Проверим",
+  caption:"Говорят, в столовых подают вчерашний плов. Показываю день одного казана: [время закладки] — закладка, [время первой порции] — первая порция, вечером — пусто.\nКакой ещё миф про столовые проверить?\n#плов #бишкек #столовая #мифы #кыргызстан",
+  dont:["Не показывать еду в мусорном ведре.","Не говорить «а у других вчерашний» — только про себя."],
+  after:"Мифы из комментариев записать — это темы второго месяца.",
+  count:"сколько новых мифов предложили в комментариях."
+},
+{
+  id:"r07", code:"R07", title:"Байке инкогнито", short:"байке инкогнито: узнают или нет",
+  rubric:"prov", batch:"b1", pub:9, time:"19:30", len:"40–50 сек", cost:"food", budget:"1 обед",
+  shoot:"Съёмка Б · день 3 · 11:00–12:30",
+  why:"Интрига «узнают или нет» держит до раскрытия. Капюшон и очки — образ, который у Азиза уже есть в ленте.",
+  who:["Азиз","Мобилограф — снимает издалека, как обычный гость","Камера Б — второй телефон на подносе Азиза"],
+  where:"Точка №[номер точки 3], где Азиза меньше знают в лицо. 12:00–12:30, очередь.",
+  props:["Худи с капюшоном без логотипов","Тёмные очки или кепка","Наличные"],
+  prep:["Мобилограф заходит за 5 минут до Азиза, берёт чай и садится с видом на раздачу.","Камера Б на подносе пишет всё время."],
+  beats:[
+    ["0:00–0:03","В машине Азиз натягивает капюшон и надевает очки.","«Сегодня я никто. Посмотрим, как обслужат обычного гостя.»","БАЙКЕ ИНКОГНИТО"],
+    ["0:03–0:20","Очередь, раздача, касса — снято издалека. Азиз шёпотом комментирует в петличку.","«Пока не узнали… Улыбнулись — плюс. Порция — нормальная.»","УЗНАЛИ? ✗"],
+    ["0:20–0:30","Садится, ест, шёпотом.","«Лагман горячий. Хлеб свежий. От двери до стола — [минут от двери до стола] минут.»","[минут от двери до стола] МИН ОТ ДВЕРИ ДО СТОЛА"],
+    ["0:30–0:42","Подходит к раздаче, снимает капюшон и очки. Реакция персонала — камера Б.","«Салам! Это я. Обслужили как надо — спасибо, [имя кассира].»","РАСКРЫТИЕ"],
+    ["0:42–0:47","Азиз в объектив, ложка вверх.","«Хоть байке, хоть нет — обслуживают одинаково. Так и должно быть. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Очередь со спины","Поднос сверху","Руки кассира"],
+  edit:["Очередь — ускорить.","Секундомер на экране: «от двери до стола»."],
+  cover:"Байке инкогнито",
+  caption:"Пришёл в свою столовую как обычный гость: капюшон, очки, очередь. Узнали или нет — смотрите до конца.\nВас в Buffet обслуживают так же? Пишите честно.\n#бишкек #тайныйгость #столовая #buffet #кыргызстан",
+  planB:["Узнали сразу — это тоже ролик: «Узнали за [секунд] секунд». Финальная фраза меняется.","Обслужили плохо — разбор без камеры, а в ролике вывод спокойный: «Есть над чем работать»."],
+  dont:["Лица гостей крупно — только с согласием.","Не ругать кассира на камеру."],
+  count:"сколько досмотрели до раскрытия."
+},
+{
+  id:"r08", code:"R08", title:"История Буфета. Часть 1: первая столовая", short:"история Буфета, часть 1",
+  rubric:"story", batch:"b1", pub:10, time:"19:30", len:"45–60 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Б · день 3 · 16:00–18:00, вместе с R15",
+  why:"Серия из трёх частей: подписываются, чтобы не пропустить продолжение. Закрепляем в профиле — новый зритель сразу понимает, кто такой Азиз.",
+  who:["Азиз","Мобилограф","Продюсер — проводит интервью перед съёмкой"],
+  where:"Первая точка Buffet: [адрес первой точки]. Если её нет — у старого адреса или в офисе со старыми фото.",
+  props:["Старые фото: первый день, ремонт, первая команда","Первое меню или вывеска, если сохранились","Чай и самса для Азиза"],
+  prep:["За 20 минут до съёмки продюсер задаёт вопросы ниже и записывает ответы.","Из ответов собираем одну историю: начало, одно трудное место, крючок на часть 2."],
+  interview:["В каком году и где открылась первая точка?","Сколько было денег на старте и откуда?","Сколько было столов и людей в команде?","Что ты делал сам, руками, в первые месяцы?","Сколько гостей пришло в первый день?","Что было самым трудным в первый год?","Был момент, когда хотел закрыться? Почему не закрылся?","Какая ошибка стоила дороже всего? (для части 2)","Когда открылась вторая точка? (для части 3)","Что сказал бы себе тогдашнему — одной фразой?"],
+  beats:[
+    ["0:00–0:03","Азиз у входа первой точки или со старым фото в руках.","«В [год открытия] у меня было [стартовая сумма] и одна столовая.»","ИСТОРИЯ BUFFET · 1/3"],
+    ["0:03–0:20","Старые фото, место, детали.","«Вот здесь была первая точка. [Столов] столов. Я сам [что делал руками].»","[год открытия] · [столов] СТОЛОВ"],
+    ["0:20–0:38","Главное трудное место истории.","«В первый день пришло [гостей в первый день] человек. [Что пошло не так — своими словами].»",""],
+    ["0:38–0:50","Крючок на часть 2.","«А потом я сделал ошибку, которая стоила мне [цена ошибки]. Об этом — в следующей части.»","ЧАСТЬ 2 — СКОРО"],
+    ["0:50–0:55","Азиз отпивает чай, в объектив, пиала вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Старые фото — медленный наезд","Вход первой точки сегодня","Руки Азиза листают фото"],
+  edit:["Тёплая цветокоррекция.","Музыка спокойная, без трендов.","Год и цифры — жёлтым."],
+  cover:"Как я открыл первую столовую",
+  caption:"История Buffet, часть 1. [Год открытия], первая точка, [столов] столов. Как всё начиналось.\nЧасть 2 — про ошибку, которая стоила мне [цена ошибки]. Подпишитесь, чтобы не пропустить.\n#бишкек #бизнес #история #buffet #кыргызстан",
+  planB:["Азиз не хочет называть сумму — говорит «почти ничего» или «как стоит одна машина»."],
+  dont:["Не придумывать драму, которой не было.","Не называть бывших партнёров по именам без их согласия."],
+  after:"После публикации закрепить в профиле.",
+  count:"подписки с ролика — главная цифра."
+},
+{
+  id:"r09", code:"R09", title:"Лук на одну смену", short:"сколько лука уходит за одну смену",
+  rubric:"big", batch:"b1", pub:11, time:"19:30", len:"25–35 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка А · день 2 · 07:00–08:00",
+  why:"Масштаб и самоирония: хозяин пробует резать лук и плачет. Такое пересылают друзьям.",
+  who:["Азиз","2–3 повара — с согласием","Мобилограф"],
+  where:"Цех заготовок главной точки, 07:00–08:00.",
+  props:["Мешки лука — реальная смена","Фартук и шапочка для Азиза — обязательно","Доска и нож для Азиза"],
+  prep:["Узнать у шефа: сколько кг лука за смену и за месяц, кто режет быстрее всех. Вписать в «Лист цифр»."],
+  beats:[
+    ["0:00–0:03","Гора лука или мешки. Азиз стоит над ними, камера снизу.","«Это лук. На одну смену.»","[кг лука за смену] КГ — 1 СМЕНА"],
+    ["0:03–0:12","Повара режут, ритм-монтаж под бит.","","[кг лука в месяц] КГ В МЕСЯЦ"],
+    ["0:12–0:25","Азиз в фартуке и шапочке режет рядом с поваром. Медленно. Плачет от лука. Повар режет в разы быстрее.","«Ладно… [имя повара] за минуту — [луковиц в минуту] луковиц. Я — две. И плачу.»","ПОВАР: [луковиц в минуту] · БАЙКЕ: 2"],
+    ["0:25–0:32","Азиз вытирает слёзы, в объектив, ложка вверх.","«Вот за это им и платят. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Нож и доска крупно","Слёзы Азиза крупно","Тазы с нарезанным луком"],
+  edit:["Ритм-монтаж поваров — точно в бит музыки.","Счётчик луковиц на экране."],
+  cover:"Лук на одну смену",
+  caption:"[Кг лука за смену] кг лука — это одна смена на одной точке. Попробовал резать сам. Результат — в видео.\nОтметьте того, кто плачет от лука сильнее всех.\n#бишкек #кухня #повар #столовая #кыргызстан",
+  dont:["Азиз не соревнуется в скорости с ножом — режет медленно и аккуратно.","Без шапочки и фартука на кухне не снимаем."],
+  count:"пересылки и отметки друзей."
+},
+{
+  id:"r10", code:"R10", title:"Хозяин на раздаче: 5 минут", short:"хозяин 5 минут на раздаче",
+  rubric:"prov", batch:"b1", pub:12, time:"19:30", len:"40–50 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка А · день 2 · 12:40–12:50. В это время камера Б пишет R14.",
+  why:"Хозяин в роли работника вызывает симпатию. Хаос обеденного пика держит внимание.",
+  who:["Азиз — фартук, шапочка, перчатки","Повар-наставник — знает заранее, с согласием","Гости — только общий план","Мобилограф"],
+  where:"Главная точка, 12:40–12:50, обеденный пик.",
+  props:["Фартук Buffet","Шапочка","Перчатки","Таймер на телефоне"],
+  prep:["Повар-наставник знает заранее: стоит рядом и подстраховывает.","Через 5 минут Азиз уходит с раздачи, даже если вошёл во вкус. Очередь не должна страдать."],
+  beats:[
+    ["0:00–0:03","Азиз завязывает фартук и ставит таймер.","«Пять минут. Я на раздаче. Я же хозяин — справлюсь.»","05:00"],
+    ["0:03–0:30","Пик. Азиз путает половники, накладывает не ту порцию, повар поправляет. Гости смеются.","Повар: «Байке, это не та порция!». Азиз — реакция своими словами.","Таймер идёт · ОШИБКА №1 · ОШИБКА №2"],
+    ["0:30–0:40","Таймер 00:00. Азиз снимает перчатки, выдыхает.","«Пять минут — [порций за 5 минут] порций и [ошибок] ошибок. А [имя повара] за смену делает [порций за смену].»","БАЙКЕ: [порций за 5 минут] · ПОВАР: [порций за смену] ЗА СМЕНУ"],
+    ["0:40–0:46","Азиз жмёт руку повару, в объектив, ложка вверх.","«Вот почему на раздаче стоят они, а не я. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Половник и тарелка крупно","Очередь общим планом","Лицо повара, когда он поправляет Азиза"],
+  edit:["Таймер всё время на экране сверху, под безопасной зоной.","Каждая ошибка — звук «бип»."],
+  cover:"Хозяин на раздаче: 5 минут",
+  caption:"Встал на раздачу в обеденный пик. Пять минут. Сколько ошибок сделал — считайте сами.\nКто из вас работал на раздаче? Вы меня поймёте.\n#бишкек #столовая #работа #buffet #кыргызстан",
+  dont:["Не задерживать очередь дольше 5 минут.","Гостей крупно — только с согласием."],
+  count:"сохранения и комментарии людей, которые работали в общепите."
+},
+{
+  id:"r11", code:"R11", title:"Наесться на [200] сом", short:"можно ли наесться на [200] сом",
+  rubric:"price", batch:"b1", pub:13, time:"11:30", len:"25–35 сек", cost:"food", budget:"1 обед",
+  shoot:"Съёмка Б · день 3 · 12:30–13:00",
+  why:"Практическая польза: где наесться за минимум. Такое сохраняют и пересылают коллегам перед обедом.",
+  who:["Азиз","Кассир — с согласием","Мобилограф"],
+  where:"Точка №[номер точки 3], 12:30–13:00.",
+  props:["Купюра [200] сом"],
+  prep:["Проверить по меню, какой самый сытный обед помещается в [200] сом. Не помещается — берём реальную минимальную сумму и меняем название ролика."],
+  beats:[
+    ["0:00–0:03","Азиз держит купюру прямо перед камерой.","«У меня [200] сом. Наемся?»","[200] СОМ = ?"],
+    ["0:03–0:18","Идёт вдоль раздачи, ставит блюда на поднос. На экране растёт сумма.","«Первое — [суп], [цена супа]. Второе — [второе блюдо], [цена второго]. Хлеб — [цена хлеба]. Компот — [цена компота].»","[сумма на подносе] / [200]"],
+    ["0:18–0:25","Касса. Итог и сдача.","Кассир: «[итог]». Азиз: «И ещё сдача — [сдача] сом».","ИТОГ: [итог] СОМ ✓"],
+    ["0:25–0:32","Ест, в объектив, ложка вверх.","«Наелся. Сохраните — пригодится. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Поднос сверху","Сдача в ладони"],
+  edit:["Счётчик суммы — в углу, жёлтым."],
+  cover:"Наесться на [200] сом",
+  caption:"Обед на [200] сом: [что вошло]. Ещё и сдача осталась.\nСохраните, чтобы не искать перед обедом. Где вы обедаете дешевле?\n#бишкек #обед #дешево #столовая #кыргызстан",
+  dont:["Только реальные цены из меню."],
+  count:"сохранения."
+},
+{
+  id:"r12", code:"R12", title:"Узнают ли меня в моей столовой?", short:"узнают ли меня в моей же столовой",
+  rubric:"exp", batch:"b1", pub:14, time:"19:30", len:"35–45 сек", cost:"free", budget:"0 сом. По желанию — компот тем, кто узнал.",
+  shoot:"Съёмка Б · день 3 · 13:00–13:30",
+  why:"Самоирония и прямой замер цели «стать узнаваемым». Повторяем каждый месяц: зритель следит, растёт ли счёт.",
+  who:["Азиз — в обычной одежде, без капюшона","Мобилограф","10 гостей — только согласившиеся"],
+  where:"Точка №[номер точки 3], 13:00–13:30, обед.",
+  props:["Компоты для тех, кто узнал — по желанию"],
+  prep:["Сначала спросить разрешение на съёмку, потом задать вопрос на камеру."],
+  beats:[
+    ["0:00–0:03","Азиз в зале, камера 1× на уровне глаз.","«Проверим, узнают ли меня в моей же столовой. Спрошу десять человек.»","УЗНАЮТ? 0/10"],
+    ["0:03–0:30","Быстрые подходы к гостям, один вопрос каждому.","«Знаете, кто хозяин Buffet?» Ответы гостей — какие есть.","Счётчик: 1/10 … 10/10"],
+    ["0:30–0:38","Итог.","«[Узнали из 10] из десяти. Мало. Через месяц повторим — посмотрим, сколько будет.»","ИТОГ: [узнали из 10]/10 · ПОВТОР ЧЕРЕЗ МЕСЯЦ"],
+    ["0:38–0:43","Азиз в объектив, ложка вверх.","«Узнали меня в Буфете — подходите, поздороваемся. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Лица гостей в момент, когда узнают — только с согласием"],
+  edit:["Самые смешные ответы — сразу после первой фразы."],
+  cover:"Узнают ли хозяина?",
+  caption:"Спросил 10 гостей Buffet, знают ли они, кто хозяин. Результат: [узнали из 10] из 10.\nЧерез месяц повторим. Ставьте прогноз: сколько будет?\n#бишкек #эксперимент #столовая #buffet #кыргызстан",
+  dont:["Не высмеивать гостей.","В ролик — только тех, кто дал согласие."],
+  after:"Записать результат — он нужен в R30 и для повтора через месяц.",
+  count:"сколько прогнозов написали в комментариях."
+},
+{
+  id:"r13", code:"R13", title:"Свежий плов: 3 признака", short:"как отличить свежий плов",
+  rubric:"know", batch:"b1", pub:15, time:"11:30", len:"30–40 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка А · день 2 · 10:30–11:00",
+  why:"Польза для всех, кто ест плов. Сохраняют. Хозяин говорит как знающий человек, без лекции.",
+  who:["Азиз","Мобилограф"],
+  where:"Главная точка, 10:30–11:00: плов только что готов. Стол у окна.",
+  props:["Тарелка свежего плова","Ложка"],
+  prep:["Азиз проверяет три признака ниже. Если у него свои — говорим его признаки."],
+  beats:[
+    ["0:00–0:03","Крупно: ложка плова у окна.","«Свежий плов или вчерашний — видно за три секунды.»","3 ПРИЗНАКА СВЕЖЕГО ПЛОВА"],
+    ["0:03–0:12","Рис крупно.","«Первое — рис. Свежий — рассыпчатый, зерно блестит. Вчерашний — слипается комом или сухой.»","1. РИС"],
+    ["0:12–0:20","Морковь крупно.","«Второе — морковь. Свежая — яркая и держит форму. Разогретая — темнеет и разваливается.»","2. МОРКОВЬ"],
+    ["0:20–0:28","Жир на тарелке крупно.","«Третье — жир. Прозрачный — хорошо. Белые застывшие капли — плов остывал, и его грели.»","3. ЖИР"],
+    ["0:28–0:35","Азиз пробует, в объектив, ложка вверх.","«Сохраните и проверяйте везде. И у нас тоже. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Макро риса","Морковь на ложке","Блеск жира на свету"],
+  edit:["Номер признака — крупно слева.","Каждый признак — новый крупный план."],
+  cover:"Свежий плов: 3 признака",
+  caption:"Как за 3 секунды понять, что плов свежий: рис, морковь, жир.\nСохраните. И проверяйте везде — у нас тоже.\n#плов #бишкек #советы #столовая #кыргызстан",
+  dont:["Не показывать плохой плов чужих заведений."],
+  count:"сохранения."
+},
+{
+  id:"r14", code:"R14", title:"12:30. Обеденный пик", short:"сколько порций уходит за час пика",
+  rubric:"big", batch:"b1", pub:16, time:"19:30", len:"20–30 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка А · день 2 · 12:25–13:30, камера Б на штативе",
+  why:"Ритм и масштаб: «хаос под контролем» пересматривают.",
+  who:["Повара на раздаче — с согласием","Гости — общий план без крупных лиц","Азиз — в финале","Мобилограф"],
+  where:"Главная точка, 12:25–13:30. Штатив сбоку раздачи пишет всё время, пока мобилограф снимает R10.",
+  props:["Штатив","Часы в кадре"],
+  prep:["Попросить управляющего: сколько порций продано с 12:30 до 13:30 — из кассы. Вписать в «Лист цифр»."],
+  beats:[
+    ["0:00–0:02","Часы: 12:29 → 12:30. Дверь открывается, заходят люди.","Натуральный звук.","12:30 · ОБЕДЕННЫЙ ПИК"],
+    ["0:02–0:18","Ускоренная очередь и ритм-монтаж рук: половник — тарелка — поднос — касса.","","Счётчик порций: 0 → [порций за час]"],
+    ["0:18–0:24","13:30. Зал пустеет, повара выдыхают.","","13:30 · [порций за час] ПОРЦИЙ ЗА ЧАС"],
+    ["0:24–0:30","Азиз с поварами, ложка вверх.","«[Порций за час] порций за час. Команда — огонь. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Руки на раздаче крупно — 10 разных кадров по 1 секунде"],
+  edit:["Монтаж строго в бит музыки.","Счётчик крутится быстро, на финальной цифре — стоп."],
+  cover:"[Порций за час] порций за час",
+  caption:"Обеденный пик в Buffet: с 12:30 до 13:30 — [порций за час] порций. Команда раздачи — лучшие.\nВо сколько вы обедаете?\n#бишкек #обед #столовая #buffet #кыргызстан",
+  dont:["Лица гостей крупно не показывать."],
+  count:"среднее время просмотра."
+},
+{
+  id:"r15", code:"R15", title:"История Буфета. Часть 2: ошибка за [цена ошибки]", short:"история Буфета, часть 2: ошибка",
+  rubric:"story", batch:"b1", pub:17, time:"19:30", len:"45–60 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Б · день 3 · 16:00–18:00, вместе с R08",
+  why:"Истории ошибок пересылают чаще других бизнес-тем. Честность хозяина — это доверие.",
+  who:["Азиз","Мобилограф"],
+  where:"Место, связанное с ошибкой — закрытая точка, склад — или офис.",
+  props:["Фото или документы того времени — без чужих данных"],
+  prep:["В том же интервью, что и для R08: что случилось, сколько стоило, какое правило появилось после."],
+  beats:[
+    ["0:00–0:03","Азиз в кадре, серьёзно.","«Эта ошибка стоила мне [цена ошибки].»","ИСТОРИЯ BUFFET · 2/3"],
+    ["0:03–0:25","Что случилось.","Своими словами, коротко: где, когда, что сделал не так.","Год, место, цифры"],
+    ["0:25–0:40","Вывод — одно правило.","«С тех пор у меня правило: [правило одной фразой].»","ПРАВИЛО: [правило одной фразой]"],
+    ["0:40–0:50","Крючок на часть 3.","«А как из одной точки стало двадцать — в третьей части.»","ЧАСТЬ 3 — СКОРО"],
+    ["0:50–0:55","В объектив, пиала или ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Место ошибки сегодня","Руки Азиза"],
+  edit:["Правило — отдельным экраном на 2 секунды."],
+  cover:"Ошибка за [цена ошибки]",
+  caption:"История Buffet, часть 2. Ошибка, которая стоила мне [цена ошибки]. И правило, которое я вынес.\nА у вас была ошибка, после которой вы поменялись?\n#бизнес #ошибки #бишкек #buffet #кыргызстан",
+  planB:["Без суммы: «очень дорого — как [с чем сравнить]»."],
+  dont:["Не обвинять людей по именам."],
+  count:"пересылки и истории в комментариях."
+},
+{
+  id:"r16", code:"R16", title:"Как выбрать столовую: 3 вещи", short:"3 вещи, которые я смотрю в любой столовой",
+  rubric:"know", batch:"b1", pub:18, time:"11:30", len:"30–40 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Б · день 3 · 15:00–15:30",
+  why:"Совет хозяина двадцати точек полезен любому, кто ест вне дома. Сохраняют и пересылают.",
+  who:["Азиз","Персонал раздачи — с согласием","Мобилограф"],
+  where:"Точка №[номер точки 4]: вход и раздача, 15:00–15:30.",
+  props:[],
+  prep:["Точка готова: еда под стеклом, у каждого блюда своя ложка, персонал в шапочках и фартуках."],
+  beats:[
+    ["0:00–0:03","Азиз у двери.","«У меня двадцать точек. В любой столовой смотрю три вещи — за десять секунд.»","3 ВЕЩИ ЗА 10 СЕКУНД"],
+    ["0:03–0:12","Заходит, вдыхает.","«Первое — запах на входе. Должно пахнуть едой. Не хлоркой и не старым маслом.»","1. ЗАПАХ"],
+    ["0:12–0:22","Раздача.","«Второе — раздача. Еда под стеклом, у каждого блюда своя ложка.»","2. РАЗДАЧА"],
+    ["0:22–0:30","Персонал на раздаче.","«Третье — люди. Шапочки, чистые фартуки, перчатки.»","3. ПЕРСОНАЛ"],
+    ["0:30–0:36","Пробует, в объектив, ложка вверх.","«Проверяйте везде. У нас — особенно. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Ложки в блюдах крупно","Шапочка и фартук крупно"],
+  edit:["Номер пункта — крупно слева."],
+  cover:"Как выбрать столовую",
+  caption:"У меня 20 точек. Вот 3 вещи, которые я смотрю в любой столовой за 10 секунд: запах, раздача, люди.\nСохраните и проверьте нас по этим правилам.\n#бишкек #столовая #советы #еда #кыргызстан",
+  dont:["Не показывать и не называть чужие заведения."],
+  count:"сохранения."
+},
+{
+  id:"r17", code:"R17", title:"Вызвал 10 такси — а там стол", short:"вызвал 10 такси, а там накрытый стол",
+  rubric:"exp", batch:"b2", pub:19, time:"19:30", len:"40–55 сек", cost:"buy", budget:"10 × (минимальный тариф такси + обед по себестоимости)",
+  shoot:"Съёмка Г · день 13 · 15:00–16:00",
+  why:"Доброе дело с интригой. Таксисты пересылают друг другу, а такси — это весь город.",
+  who:["Азиз","Мобилограф","Камера Б — второй телефон на штативе у входа","Продюсер — вызывает такси","10 водителей — снимаем только согласившихся"],
+  where:"Точка с удобной парковкой, 15:00–16:00: не пик, пробок меньше.",
+  props:["Стол на 10 человек: плов, лагман, самса, салаты, чай","Табличка на столе «Таксистам — от Азиза байке»","Наличные для оплаты поездок","2–3 телефона с приложениями такси"],
+  prep:["Продюсер за 10 минут вызывает 10 машин на адрес точки с 2–3 телефонов.","Каждому водителю оплачиваем поездку — даже тем, кто откажется сниматься или есть.","Стол накрыт до приезда первой машины.","Номера машин в монтаже размываем."],
+  beats:[
+    ["0:00–0:03","Экран телефона: заказ такси, адрес — Buffet. Ускоренно: 10 заказов.","«Вызвал десять такси. Сейчас узнают зачем.»","10 ТАКСИ · 1 АДРЕС"],
+    ["0:03–0:15","Подъезжает первая машина. Водитель выходит, не понимает. Азиз встречает.","«Брат, поездку я уже оплатил. Пойдём — стол накрыт. Пятнадцать минут — и обратно на линию.»",""],
+    ["0:15–0:35","Монтаж: машины подъезжают, водители заходят, стол заполняется. 2–3 лучшие фразы водителей.","Водители — своими словами.","Счётчик: 3/10 … 7/10 … 10/10"],
+    ["0:35–0:45","Азиз встаёт у стола.","«Вы весь день возите людей на обед. Сегодня — ваша очередь. Рахмат, агалар!»","10/10"],
+    ["0:45–0:50","В объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Машины подъезжают — общий план","Руки водителей за столом","Чай наливают"],
+  edit:["Номера машин — размыть.","Счётчик водителей — в углу.","Самая смешная реакция водителя — сразу после первой фразы."],
+  cover:"Вызвал 10 такси — а там стол",
+  caption:"Вызвал 10 такси на адрес Buffet. Водители думали — заказ. А там накрытый стол.\nОтправьте знакомому таксисту.\n#бишкек #такси #сюрприз #buffet #кыргызстан",
+  planB:["Приехало меньше 10 — так и пишем: «[сколько приехало] из 10»."],
+  dont:["Не держать водителей дольше 20 минут.","Не снимать тех, кто отказался.","Не показывать номера машин."],
+  count:"пересылки."
+},
+{
+  id:"r18", code:"R18", title:"Минимум против максимума", short:"обед-минимум против обеда-максимума",
+  rubric:"exp", batch:"b2", pub:20, time:"19:30", len:"30–40 сек", cost:"food", budget:"По одной порции каждого блюда меню, по себестоимости. Всё съедает команда.",
+  shoot:"Съёмка В · день 12 · 13:30–14:30",
+  why:"Трендовый формат сравнения плюс «всё по-большому». Досматривают ради итоговой суммы.",
+  who:["Азиз","Команда точки — в финале, с согласием","Мобилограф"],
+  where:"Главная точка, 13:30–14:30, после пика.",
+  props:["Стол 1: самый дешёвый сытный обед","Стол 2: всё меню, по одной порции каждого блюда"],
+  prep:["Посчитать цену минимума и цену всего меню, вписать в «Лист цифр».","Позвать команду заранее: в финале все едят."],
+  beats:[
+    ["0:00–0:03","Два кадра рядом: слева одна тарелка, справа огромный стол.","«Обед в Буфете: минимум и максимум.»","МИНИМУМ vs МАКСИМУМ"],
+    ["0:03–0:13","Минимум.","«Минимум: [минимальный обед]. [Цена минимума] сом. Наешься? Да.»","[цена минимума] СОМ"],
+    ["0:13–0:28","Максимум: проход вдоль стола, Азиз пробует каждое блюдо по ложке.","«Максимум: всё меню. [Блюд в меню] блюд. Плов, лагман, манты…»","Счётчик блюд · сумма растёт"],
+    ["0:28–0:34","Итог. Команда садится за стол.","«Максимум — [цена всего меню] сом. Одному не осилить — зову команду.»","[цена всего меню] СОМ"],
+    ["0:34–0:38","В объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Стол сверху","Команда ест — общий план"],
+  edit:["Два кадра рядом в начале — 2 секунды."],
+  cover:"Обед: минимум vs максимум",
+  caption:"Минимум — [цена минимума] сом. Максимум — всё меню за [цена всего меню] сом. Что выбрали бы вы?\n#бишкек #обед #столовая #тренд #кыргызстан",
+  dont:["Ни одной тарелки в мусор: всё съедает команда, и это видно в кадре."],
+  count:"комментарии «что выбрали бы»."
+},
+{
+  id:"r19", code:"R19", title:"Худший отзыв", short:"еду проверять худший отзыв",
+  rubric:"prov", batch:"b2", pub:21, time:"19:30", len:"40–55 сек", cost:"food", budget:"1 обед автору отзыва",
+  shoot:"Съёмка В · день 12 · 10:00–11:00",
+  why:"Хозяин сам едет разбираться с жалобой. Честность и конфликт держат до конца.",
+  who:["Азиз","Мобилограф","Управляющий точки из отзыва — с согласием"],
+  where:"Точка, о которой отзыв: [адрес точки из отзыва]. 10:00–11:00.",
+  props:["Телефон с открытым отзывом"],
+  prep:["Продюсер находит в 2ГИС или Google свежий негативный отзыв о конкретной точке.","Имя и фото автора на экране замазываем.","Жалобы на отравление в этот формат не берём — их решают официально."],
+  beats:[
+    ["0:00–0:03","Азиз в машине читает с телефона.","«„[Цитата отзыва]“. Самый злой отзыв за месяц. Еду проверять.»","ХУДШИЙ ОТЗЫВ · ★☆☆☆☆"],
+    ["0:03–0:10","Приезд на точку.","«Точка [адрес точки из отзыва]. Проверяю каждое слово.»",""],
+    ["0:10–0:35","Проверяет именно то, на что жаловались: температуру еды, время ожидания, чистоту.","Реакции своими словами.","ЖАЛОБА: [суть жалобы] → ПРОВЕРКА: [результат проверки]"],
+    ["0:35–0:47","Решение.","Отзыв справедливый: «Исправили: [что исправили]». Несправедливый: «Сегодня всё нормально. Но спасибо — проверяем каждую неделю».","ИСПРАВЛЕНО ✓ или ПРОВЕРЕНО ✓"],
+    ["0:47–0:52","В объектив, ложка вверх.","«Автору отзыва — обед за мой счёт. Напишите в директ. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Экран с отзывом — имя замазано","Градусник в еде, если жалоба на холодную еду"],
+  edit:["Цитата отзыва — на экране целиком, 2 секунды."],
+  cover:"Худший отзыв: еду проверять",
+  caption:"Нашёл самый злой отзыв о нашей точке за месяц и поехал проверять. Что нашёл — в видео.\nАвтор, напишите мне — обед за мой счёт.\n#бишкек #отзывы #столовая #buffet #кыргызстан",
+  dont:["Не спорить с автором публично.","Не показывать имя и фото автора."],
+  count:"тон комментариев: благодарят или спорят."
+},
+{
+  id:"r20", code:"R20", title:"Куда уходят ваши 100 сом", short:"куда уходят ваши 100 сом",
+  rubric:"price", batch:"b2", pub:22, time:"11:30", len:"30–40 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Г · день 13 · 11:30–12:00",
+  why:"Как устроены деньги в общепите — интересно всем. Прозрачность вызывает доверие и споры в комментариях.",
+  who:["Азиз","Мобилограф"],
+  where:"Офис или стол в зале, свет из окна.",
+  props:["10 монет по 10 сом","Карточки-подписи: продукты, зарплата, аренда, свет и газ, налоги, хозяину","Штатив — съёмка сверху"],
+  prep:["Азиз с бухгалтером округляют, куда уходят 100 сом. Вписать в «Лист цифр».","Если Азиз не хочет называть свою часть — снимаем по плану Б."],
+  beats:[
+    ["0:00–0:03","Сверху: Азиз кладёт на стол 10 монет.","«Вы платите за обед сто сом. Куда они уходят?»","КУДА УХОДЯТ 100 СОМ"],
+    ["0:03–0:25","Раскладывает монеты кучками к карточкам.","«[Продукты] — продукты. [Зарплаты] — зарплата поварам. [Аренда] — аренда. [Коммуналка] — свет, газ, вода. [Налоги] — налоги.»","Подписи и цифры — жёлтым"],
+    ["0:25–0:32","Остаётся последняя кучка.","«А мне остаётся вот это. [Хозяину] сом.»","ХОЗЯИНУ: [хозяину] СОМ"],
+    ["0:32–0:38","Азиз пробует самсу, в объектив, ложка вверх.","«Поэтому столовая живёт количеством. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Монеты падают на стол — замедленно"],
+  edit:["Кучки снимать сверху, со штатива."],
+  cover:"Куда уходят ваши 100 сом",
+  caption:"Из каждых 100 сом за обед: [продукты] — продукты, [зарплаты] — зарплаты, [аренда] — аренда, [коммуналка] — коммуналка, [налоги] — налоги. Хозяину — [хозяину].\nОжидали больше или меньше?\n#бизнес #бишкек #деньги #столовая #кыргызстан",
+  planB:["Без своей доли: «А сколько остаётся мне — напишите, как думаете». Комментариев будет ещё больше."],
+  dont:["Только реальные округлённые цифры, одобренные Азизом."],
+  count:"комментарии и сохранения."
+},
+{
+  id:"r21", code:"R21", title:"Вопросы от команды", short:"команда задаёт мне вопросы",
+  rubric:"team", batch:"b2", pub:23, time:"19:30", len:"40–55 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка В · день 12 · 15:00–15:45",
+  why:"Хозяин честно отвечает своим людям — видно, какой он начальник. Ролик работает и на найм.",
+  who:["Азиз","3–5 сотрудников в кадре — с согласием","Мобилограф"],
+  where:"Главная точка после смены, 15:00–15:45.",
+  props:["Коробка с записками"],
+  prep:["За неделю продюсер собирает анонимные вопросы команды в коробку.","Продюсер отбирает 6–8 вопросов. Личные и конфликтные Азиз разбирает без камеры.","Азиз не видит вопросы до съёмки."],
+  beats:[
+    ["0:00–0:03","Коробка с записками на столе, рядом Азиз.","«Команда написала мне вопросы. Анонимно. Отвечаю честно.»","ВОПРОСЫ ОТ КОМАНДЫ"],
+    ["0:03–0:40","Азиз достаёт записку, читает вслух, отвечает. 3–4 вопроса. Например: «Почему вы всегда пробуете первым?», «Вы сами стояли на раздаче?», «Что вы едите каждый день?», «Как вырасти до управляющего?».","Ответы — своими словами, коротко.","Вопрос на экране целиком"],
+    ["0:40–0:50","Последний вопрос — тёплый или смешной.","Ответ своими словами.",""],
+    ["0:50–0:55","В объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Руки достают записку","Лица команды, пока Азиз отвечает"],
+  edit:["Вопрос висит на экране, пока Азиз его читает."],
+  cover:"Команда спрашивает байке",
+  caption:"Команда Buffet написала мне анонимные вопросы. Ответил на камеру.\nЧто бы вы спросили у своего начальника?\n#бишкек #работа #команда #buffet #кыргызстан",
+  dont:["Обещания на камеру — только те, которые Азиз точно выполнит."],
+  count:"сообщения в директ о работе."
+},
+{
+  id:"r22", code:"R22", title:"История Буфета. Часть 3: двадцать точек", short:"история Буфета, часть 3: как стало 20 точек",
+  rubric:"story", batch:"b2", pub:24, time:"19:30", len:"45–60 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Г · день 13 · 12:00–13:00",
+  why:"Финал серии: рост от одной точки до двадцати и выход в Казахстан. Объясняет масштаб.",
+  who:["Азиз","Мобилограф"],
+  where:"Самая новая точка или офис.",
+  props:["Вывески разных точек — кадры с прошлых съёмок"],
+  prep:["Интервью 15 минут: когда открылась вторая точка, какое решение запустило рост, как зашли в Казахстан, что дальше."],
+  beats:[
+    ["0:00–0:03","Азиз на фоне самой новой точки.","«От одной точки до двадцати. Вот что сработало.»","ИСТОРИЯ BUFFET · 3/3"],
+    ["0:03–0:20","Быстрый монтаж вывесок разных точек с годами.","«[Год второй точки] — вторая точка. [Год] — [точек] точек. [Год выхода в Казахстан] — Казахстан.»","[год] · [точек] ТОЧЕК"],
+    ["0:20–0:38","Главное решение роста.","«Всё поменялось, когда я [главное решение роста — своими словами].»",""],
+    ["0:38–0:50","Про людей и про будущее.","«Без команды ничего бы не было. Дальше — [план на следующий год].»","ДАЛЬШЕ: [план на следующий год]"],
+    ["0:50–0:55","Пробует плов, в объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Вывески разных точек","Простая карта Кыргызстана и Казахстана с точками — графика в монтаже"],
+  edit:["Карта с точками — простая анимация, точки загораются по годам."],
+  cover:"От 1 до 20 точек",
+  caption:"История Buffet, часть 3. Как из одной столовой стало 20 точек в Кыргызстане и Казахстане.\nВ каком городе открыть следующую?\n#бизнес #бишкек #казахстан #buffet #кыргызстан",
+  dont:["Не обещать открытия, которые ещё не решены."],
+  count:"сколько городов предложили в комментариях."
+},
+{
+  id:"r23", code:"R23", title:"Фура на два дня", short:"что приезжает в одной фуре",
+  rubric:"big", batch:"b2", pub:25, time:"19:30", len:"25–35 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка В · день 12 · [время поставки]. Если поставка в другой день — снимаем в день поставки.",
+  why:"Масштаб в цифрах: «куда девается столько еды».",
+  who:["Азиз","Грузчики и водитель — с согласием или без лиц","Мобилограф"],
+  where:"Склад или цех в момент поставки.",
+  props:["Штатив для таймлапса разгрузки"],
+  prep:["Узнать время поставки, что и сколько в одной фуре. Вписать в «Лист цифр».","Логотипы поставщиков и накладные в кадр не берём."],
+  beats:[
+    ["0:00–0:03","Фура у склада, двери открываются. Азиз рядом.","«Это — на два дня.»","1 ФУРА = 2 ДНЯ"],
+    ["0:03–0:20","Ускоренная разгрузка со штатива. На экране — что и сколько.","","РИС — [кг риса в фуре] КГ · МЯСО — [кг мяса в фуре] КГ · КАРТОШКА — [кг картошки в фуре] КГ · МУКА — [кг муки в фуре] КГ"],
+    ["0:20–0:26","Полный склад.","«Через сорок восемь часов здесь будет пусто.»","48 ЧАСОВ"],
+    ["0:26–0:32","Азиз пробует самсу из этой муки, в объектив, ложка или самса вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Мешки крупно","Тележки","Полки склада"],
+  edit:["Таймлапс разгрузки — 10–12 секунд.","Натуральный звук громче музыки."],
+  cover:"Это на 2 дня",
+  caption:"Одна фура продуктов — на 2 дня для наших точек: [кг риса в фуре] кг риса, [кг мяса в фуре] кг мяса, [кг картошки в фуре] кг картошки.\nУгадайте, сколько таких фур в месяц?\n#бишкек #склад #масштаб #buffet #кыргызстан",
+  dont:["Логотипы поставщиков, накладные и закупочные цены — не в кадре."],
+  count:"среднее время просмотра."
+},
+{
+  id:"r24", code:"R24", title:"Апа пробует наш плов", short:"апа, которая 50 лет варит плов, пробует наш",
+  rubric:"exp", batch:"b2", pub:26, time:"19:30", len:"35–45 сек", cost:"buy", budget:"Подарок апа: [подарок апа]",
+  shoot:"Съёмка В · день 12 · 11:30–12:30",
+  why:"Уважение к старшим и честный вердикт. Дети пересылают ролик родителям — так он доходит до взрослой аудитории.",
+  who:["Азиз","Апа — родственница кого-то из команды или постоянная гостья, с согласием; её семья рядом","Мобилограф"],
+  where:"Главная точка, тихий стол у окна, 11:30–12:30.",
+  props:["Свежий плов","Чай","Подарок: платок или сладости"],
+  prep:["Апа знает, что идёт съёмка. Слов ей не подсказываем.","Говорит по-кыргызски — делаем субтитры."],
+  beats:[
+    ["0:00–0:03","Апа за столом, рядом Азиз.","«Апа варит плов пятьдесят лет. Пусть скажет честно, как у нас.»","ЧЕСТНЫЙ ВЕРДИКТ АПА"],
+    ["0:03–0:25","Апа пробует медленно и комментирует. Азиз заметно волнуется.","Апа — своими словами.","Субтитры"],
+    ["0:25–0:35","Вердикт.","Азиз: «Апа, сколько из десяти?»","ОЦЕНКА АПА: [оценка апа]/10"],
+    ["0:35–0:42","Азиз дарит подарок. Если апа даёт бата — оставляем в ролике.","",""],
+    ["0:42–0:46","В объектив, ложка вверх.","«Совет апа записали. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Руки апа крупно","Лицо Азиза, пока она жуёт"],
+  edit:["Перед оценкой — 1 секунда тишины."],
+  cover:"Апа оценивает наш плов",
+  caption:"Апа варит плов 50 лет. Попросил её честно оценить наш. Оценка — [оценка апа]/10.\nОтправьте маме — пусть скажет, согласна или нет.\n#плов #апа #бишкек #buffet #кыргызстан",
+  dont:["Не подсказывать апа, что сказать.","Плохой вердикт тоже публикуем — с выводом «исправим»."],
+  count:"пересылки и возраст аудитории в статистике."
+},
+{
+  id:"r25", code:"R25", title:"06:00. Кто уже на работе", short:"шесть утра: кто уже на работе",
+  rubric:"prov", batch:"b2", pub:27, time:"19:30", len:"30–40 сек", cost:"food", budget:"Завтрак для утренней смены",
+  shoot:"Съёмка В · день 12 · 05:45–06:30",
+  why:"Атмосфера города до рассвета и уважение к утренней смене. Такие ролики досматривают.",
+  who:["Азиз","Утренняя смена — с согласием","Мобилограф"],
+  where:"Точка с самой ранней сменой: [время прихода утренней смены].",
+  props:["Горячий завтрак и чай для смены — Азиз привозит с собой"],
+  prep:["Узнать, на какой точке и во сколько приходит первая смена."],
+  beats:[
+    ["0:00–0:03","Темно. Азиз у двери точки с пакетом в руке.","«Шесть утра. Город спит. Посмотрим, кто уже на работе.»","06:00"],
+    ["0:03–0:20","Внутри: тесто, мясо, казаны. Азиз здоровается с каждым по имени.","«[Имя], с какого часа ты тут?» Ответы — своими словами.","Имена и время прихода"],
+    ["0:20–0:30","Азиз ставит на стол завтрак.","«Сегодня завтрак вам привёз я.»",""],
+    ["0:30–0:35","Пробует тесто или чай, в объектив, пиала вверх.","«Пока вы спите — они уже готовят вам обед. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Тёмная улица и свет в окне точки","Пар от теста"],
+  edit:["Цвет: холодный синий на улице → тёплый свет кухни."],
+  cover:"06:00. Кто уже на работе?",
+  caption:"Шесть утра. Город спит, а утренняя смена Buffet уже готовит обед. Привёз им завтрак.\nКто из вас тоже встаёт до рассвета?\n#бишкек #утро #работа #buffet #кыргызстан",
+  dont:["Не снимать тех, кто отдыхает."],
+  count:"лайки на охват."
+},
+{
+  id:"r26", code:"R26", title:"Сколько зарабатывает повар", short:"сколько зарабатывает повар Buffet",
+  rubric:"price", batch:"b2", pub:28, time:"19:30", len:"30–40 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка В · день 12 · 15:45–16:15",
+  why:"Зарплаты — одна из самых обсуждаемых тем. Ролик работает на найм. Завтра выходит сюрприз этому же повару — зритель ждёт продолжения.",
+  who:["Азиз","Повар [имя повара] — согласен назвать сумму","Мобилограф"],
+  where:"Кухня после смены.",
+  props:[],
+  prep:["Три условия, иначе план Б: повар согласен назвать сумму, сумма достойная для рынка, Азиз одобрил.","Это тот же повар, которому в R27 будет сюрприз."],
+  beats:[
+    ["0:00–0:03","Азиз и повар у плиты.","«Сколько зарабатывает повар в моей столовой? Пусть скажет сам.»","СКОЛЬКО ПОЛУЧАЕТ ПОВАР?"],
+    ["0:03–0:15","Повар говорит в камеру.","Повар: «[Зарплата повара] в месяц. Работаю [график].»","[зарплата повара] СОМ"],
+    ["0:15–0:28","Путь роста.","Азиз: «А дальше — [следующая должность], там [зарплата на следующей должности]. [Имя повара] пришёл к нам [когда и кем пришёл].»","РОСТ: [следующая должность] — [зарплата на следующей должности]"],
+    ["0:28–0:35","Азиз пробует блюдо повара, в объектив, ложка вверх.","«Ищем поваров — пишите в директ. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Руки повара за работой","Повар у плиты — средний план"],
+  edit:["Сумма — крупно, жёлтым."],
+  cover:"Сколько получает повар",
+  caption:"[Имя повара] работает в Buffet [лет в Buffet] лет. Зарплата — [зарплата повара] сом. Дальше можно вырасти до [следующая должность].\nИщем поваров: пишите в директ.\n#работа #бишкек #повар #вакансии #кыргызстан",
+  planB:["Сумму не называем — снимаем «Сколько порций повар делает за смену»: тот же герой, те же кадры, порции вместо денег."],
+  dont:["Не сравнивать с зарплатами у конкурентов."],
+  count:"сообщения в директ о работе."
+},
+{
+  id:"r27", code:"R27", title:"Сюрприз повару", short:"сюрприз повару",
+  rubric:"exp", batch:"b2", pub:29, time:"19:30", len:"40–50 сек", cost:"buy", budget:"Подарок: [подарок повару] + торт",
+  shoot:"Съёмка Г · день 13 · 17:00–18:00",
+  why:"Продолжение вчерашнего ролика с тем же героем — зритель досматривает историю. Эмоция и уважение к команде.",
+  who:["Азиз","Повар [имя повара]","Семья повара — приглашена тайно, с согласием","Команда точки","Мобилограф","Камера Б на штативе — на лицо повара"],
+  where:"Точка повара, после смены, 17:00–18:00.",
+  props:["Подарок","Торт со свечами","Грамота «[лет в Buffet] лет в Buffet»"],
+  prep:["Семью приглашает продюсер, тайно.","Повар не знает о сюрпризе.","Если повар против публичности — вручаем без камеры."],
+  beats:[
+    ["0:00–0:03","Команда прячется в зале, Азиз говорит шёпотом.","«[Имя повара] работает с нами [лет в Buffet] лет. Он не знает, что сейчас будет.»","[лет в Buffet] ЛЕТ В BUFFET"],
+    ["0:03–0:15","Повар заходит в зал: команда хлопает, выходит семья.","",""],
+    ["0:15–0:30","Реакция. Азиз вручает подарок и грамоту.","«[Имя повара], спасибо за [лет в Buffet] лет. Это тебе от всех нас.»",""],
+    ["0:30–0:40","Повар говорит пару слов, если хочет.","Повар — своими словами.",""],
+    ["0:40–0:45","Азиз пробует торт, в объектив, ложка вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Лицо повара в момент, когда видит семью — камера Б","Торт со свечами"],
+  edit:["Реакцию показать дважды: в реальном времени и замедленно."],
+  cover:"Сюрприз для повара",
+  caption:"[Имя повара] работает в Buffet [лет в Buffet] лет. Сегодня — его день.\nОтметьте коллегу, который заслужил такой же.\n#бишкек #команда #сюрприз #buffet #кыргызстан",
+  dont:["Повар против — не снимаем."],
+  count:"лайки и отметки коллег."
+},
+{
+  id:"r28", code:"R28", title:"Сколько стоит открыть столовую", short:"сколько стоит открыть столовую",
+  rubric:"price", batch:"b2", pub:30, time:"19:30", len:"40–50 сек", cost:"free", budget:"0 сом",
+  shoot:"Съёмка Г · день 13 · 10:00–11:00",
+  why:"Тысячи людей хотят своё дело. Цифры от хозяина двадцати точек сохраняют.",
+  who:["Азиз","Мобилограф"],
+  where:"Точка на ремонте или пустое помещение. Если такого нет — зал до открытия.",
+  props:[],
+  prep:["Азиз с бухгалтером считает округлённые суммы по статьям. Вписать в «Лист цифр»."],
+  beats:[
+    ["0:00–0:03","Азиз в пустом помещении.","«Сколько стоит открыть такую столовую? Скажу одной цифрой.»","СКОЛЬКО СТОИТ ОТКРЫТЬ"],
+    ["0:03–0:30","Азиз проходит по помещению. На каждой зоне — статья расходов.","«Ремонт — [ремонт]. Кухня и оборудование — [оборудование]. Мебель — [мебель]. Первая закупка — [первая закупка]. И запас на три месяца — [запас на 3 месяца].»","Каждая статья — жёлтым"],
+    ["0:30–0:38","Итог.","«Итого — около [итого]. Главное — не деньги, а [главное правило открытия].»","ИТОГО: [итого]"],
+    ["0:38–0:43","Азиз пьёт чай из пиалы, в объектив, пиала вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Голые стены","Кухонное оборудование крупно"],
+  edit:["Счётчик общей суммы в углу растёт с каждой статьёй."],
+  cover:"Сколько стоит открыть столовую",
+  caption:"Сколько стоит открыть столовую в Бишкеке: ремонт, оборудование, мебель, закупка, запас. Итого — около [итого].\nСохраните, если думаете о своём деле.\n#бизнес #бишкек #столовая #деньги #кыргызстан",
+  dont:["Только реальные округлённые цифры, одобренные Азизом.","Не превращать в урок: одна цифра и одно правило."],
+  count:"сохранения."
+},
+{
+  id:"r29", code:"R29", title:"Отвечаю на ваши комментарии", short:"отвечаю на ваши комментарии",
+  rubric:"team", batch:"b2", pub:31, time:"19:30", len:"35–50 сек", cost:"free", budget:"0 сом",
+  shoot:"День 26 · 30 минут",
+  why:"Зритель видит, что хозяин читает его. Ответ на комментарий — повод подписаться и писать ещё.",
+  who:["Азиз","Мобилограф"],
+  where:"Офис или зал точки.",
+  props:["Скриншоты 4 комментариев"],
+  prep:["Продюсер выбирает 4 настоящих комментария из прошлых роликов: вопрос, критику, смешной и просьбу «приезжайте к нам».","Имя автора можно оставить — это публичный комментарий."],
+  beats:[
+    ["0:00–0:03","На экране скриншот самого дерзкого комментария, Азиз читает.","«„[Самый дерзкий комментарий]“. Отвечаю.»","Скриншот комментария"],
+    ["0:03–0:15","Ответ.","Своими словами — коротко и с юмором.",""],
+    ["0:15–0:35","Ещё 3 комментария подряд, по 5–6 секунд на ответ.","Ответы — коротко.","Скриншоты"],
+    ["0:35–0:45","Просьба «приезжайте к нам».","«[Точка из комментария] — еду к вам на следующей неделе. Проверим.»","СЛЕДУЮЩАЯ ПРОВЕРКА: [точка из комментария]"],
+    ["0:45–0:50","Пьёт чай, в объектив, пиала вверх.","«Пишите ещё — читаю всё. Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Телефон с комментариями в руках Азиза"],
+  edit:["Скриншот появляется, пока Азиз читает."],
+  cover:"Отвечаю на комментарии",
+  caption:"Читаю все ваши комментарии. Ответил на 4 самых интересных.\nСледующая проверка — [точка из комментария]. Какой вопрос задать мне в следующий раз?\n#бишкек #ответы #buffet #кыргызстан #азизбайке",
+  dont:["Не отвечать грубостью на грубость."],
+  after:"Обещанную проверку снять в первую неделю второго месяца.",
+  count:"сколько новых комментариев."
+},
+{
+  id:"r30", code:"R30", title:"Мой день: с 06:00 до 23:00", short:"один мой день с 06:00 до 23:00",
+  rubric:"team", batch:"b2", pub:32, time:"19:30", len:"40–60 сек", cost:"free", budget:"0 сом",
+  shoot:"Кадры со всех съёмок месяца + досъёмка в день 28, 1 час",
+  why:"Итог месяца. Азиз целиком — от будильника до вечера. Зритель видит, что за всеми роликами один живой человек.",
+  who:["Азиз","Мобилограф","Семья — только если Азиз согласен"],
+  where:"Машина, точки, склад, офис. Дом — только с согласия Азиза.",
+  props:[],
+  prep:["На каждой съёмке месяца мобилограф снимает 3–5 секунд «жизни между кадрами»: машина, дорога, звонки, перекус.","Досъёмка в день 28: будильник, утро, вечер."],
+  beats:[
+    ["0:00–0:03","Будильник 06:00, Азиз встаёт.","«Мой день. С шести утра.»","06:00"],
+    ["0:03–0:35","Быстрый монтаж с временем на экране: точка, склад, обеденный пик, офис, проверка, вечер.","Короткие фразы на ходу, своими словами.","07:00 · 09:00 · 12:30 · 15:00 · 18:00 · 21:00"],
+    ["0:35–0:48","23:00. Итог дня.","«Сегодня — [точек за день] точек, [км за день] км. Две недели назад меня узнавали [узнали из 10] из десяти. Скоро проверим снова.»","ИТОГ ДНЯ"],
+    ["0:48–0:53","Пьёт чай, в объектив, пиала вверх.","«Баарыңарга аш болсун!»","Всем приятного аппетита!"]
+  ],
+  broll:["Руль и дорога","Телефон звонит","Вечерний город"],
+  edit:["Время на экране меняется, как на часах.","Музыка спокойная, в финале — тише."],
+  cover:"Мой день: 06:00–23:00",
+  caption:"Один мой день: [точек за день] точек, [км за день] км, плов, склад, офис. Две недели назад меня узнавали [узнали из 10] гостей из 10. Скоро проверим снова.\nСпасибо, что смотрите каждый день.\n#бишкек #деньизжизни #бизнес #buffet #кыргызстан",
+  dont:["Дом и семья — только с согласия Азиза.","Роскошь напоказ — нет."],
+  count:"подписки с ролика и итог месяца по подписчикам."
+}
+];
+
+var BACKUPS = [
+  {code:"З1", title:"Мой обед", when:"Вместо любого ролика, который не получилось снять.", len:"25–30 сек", budget:"0 сом",
+   beats:[
+    ["0:00–0:03","Азиз с подносом идёт к столу.","«Что ест хозяин двадцати точек? Показываю свой поднос.»","ОБЕД ХОЗЯИНА"],
+    ["0:03–0:20","Сверху поднос. Азиз показывает каждое блюдо.","«[Блюдо 1] — потому что [почему]. [Блюдо 2] — [почему]. Всего — [сумма] сом.»","[сумма] СОМ"],
+    ["0:20–0:28","Пробует, в объектив, ложка вверх.","«Ем это почти каждый день. Баарыңарга аш болсун!»","Всем приятного аппетита!"]]},
+  {code:"З2", title:"Что в этих бочках?", when:"Вместо ролика рубрики «По-большому». Заранее узнать, что в бочках и сколько.", len:"20–30 сек", budget:"0 сом",
+   beats:[
+    ["0:00–0:03","Стена бочек, Азиз перед ней.","«Угадайте, что в этих бочках.»","ЧТО ВНУТРИ? 👇"],
+    ["0:03–0:18","Открывает три бочки по очереди, крупно содержимое.","«Первая — [что в бочке 1]. Вторая — [что в бочке 2]. Третья — [что в бочке 3].»","[сколько бочек] БОЧЕК"],
+    ["0:18–0:25","Пробует, в объектив, ложка вверх.","«Это на [сколько дней]. Баарыңарга аш болсун!»","Всем приятного аппетита!"]]},
+  {code:"З3", title:"Первый снег — шорпо", when:"В день первого снега. Встаёт вместо ролика этого дня, план сдвигается на день.", len:"15–20 сек", budget:"0 сом",
+   beats:[
+    ["0:00–0:03","Окно, за ним снег. Азиз смотрит в окно.","«Вот и снег. Значит — шорпо.»","ПЕРВЫЙ СНЕГ"],
+    ["0:03–0:13","Крупно: пар, ложка, лепёшка. Азиз ест.","Без слов. Натуральный звук.",""],
+    ["0:13–0:18","В объектив, ложка вверх.","«Кто в такую погоду — к нам? Баарыңарга аш болсун!»","Всем приятного аппетита!"]]}
+];
+
+var CAL = [
+  [1,  ["r01"], ["Съёмка пилота 11:00–11:40, монтаж до 17:00","Закрепить R01 в профиле"]],
+  [2,  [], ["Съёмка А — главная точка с кухней, 05:45–13:30: R02, R03, R06, R09, R10, R13, R14","Вечером: цифры R01 за 24 часа"]],
+  [3,  [], ["Съёмка Б — точки №2, №3, №4 и офис, 09:30–18:00: R04, R05, R07, R08, R11, R12, R15, R16"]],
+  [4,  ["r02"], ["Монтаж R03 и R04"]],
+  [5,  ["r03"], []],
+  [6,  ["r04"], []],
+  [7,  ["r05"], []],
+  [8,  ["r06"], ["Разбор недели — 30 минут"]],
+  [9,  ["r07"], []],
+  [10, ["r08"], ["Закрепить R08 в профиле"]],
+  [11, ["r09"], []],
+  [12, ["r10"], ["Съёмка В, 05:45–16:15: R18, R19, R21, R23, R24, R25, R26"]],
+  [13, ["r11"], ["Съёмка Г, 10:00–18:00: R17, R20, R22, R27, R28"]],
+  [14, ["r12"], []],
+  [15, ["r13"], ["Разбор недели — 30 минут"]],
+  [16, ["r14"], []],
+  [17, ["r15"], []],
+  [18, ["r16"], ["Закрепить третьим лучший по охвату ролик"]],
+  [19, ["r17"], []],
+  [20, ["r18"], []],
+  [21, ["r19"], []],
+  [22, ["r20"], ["Разбор недели — 30 минут"]],
+  [23, ["r21"], []],
+  [24, ["r22"], []],
+  [25, ["r23"], []],
+  [26, ["r24"], ["Съёмка R29 — 30 минут"]],
+  [27, ["r25"], []],
+  [28, ["r26"], ["Досъёмка R30 — 1 час"]],
+  [29, ["r27"], ["Разбор недели — 30 минут"]],
+  [30, ["r28"], []],
+  [31, ["r29"], []],
+  [32, ["r30"], []],
+  [33, [], ["Итоги месяца: цифры всех роликов, решения на второй месяц"]]
+];
+
+var FACTS = [
+  ["R01", ["Номер и адрес точки для пилота: средняя, где Азиз давно не был","Имя управляющего этой точки"]],
+  ["R02", ["Во сколько закладывают плов на главной точке","Сколько в одном казане: кг мяса, лука, моркови, риса, литров масла","Сколько часов готовится и сколько порций выходит","Адрес главной точки"]],
+  ["R03", ["Состав обеда на четверых по меню","Сумма за четверых и на одного"]],
+  ["R04", ["Номер точки 2"]],
+  ["R06", ["Время закладки, первой порции и закрытия","Что делают с остатками плова вечером. Если плов переходит на следующий день — R06 не снимаем"]],
+  ["R07", ["Номер точки 3 — где Азиза меньше знают в лицо","Имя кассира"]],
+  ["R08", ["Год открытия первой точки и её адрес","Стартовая сумма","Сколько было столов","Что Азиз делал сам, руками","Сколько гостей пришло в первый день"]],
+  ["R09", ["Сколько кг лука уходит за смену и за месяц","Кто из поваров режет быстрее всех"]],
+  ["R10", ["Сколько порций повар раздачи делает за смену"]],
+  ["R11", ["Самый сытный обед в 200 сом: блюда и цены. Если не помещается — реальная минимальная сумма"]],
+  ["R14", ["Сколько порций продано с 12:30 до 13:30 — из кассы"]],
+  ["R15", ["Какая ошибка стоила дороже всего, сколько, какое правило после неё"]],
+  ["R16", ["Номер точки 4"]],
+  ["R17", ["Минимальный тариф такси","Себестоимость одного обеда"]],
+  ["R18", ["Самый дешёвый сытный обед и его цена","Сколько блюд в меню и сколько стоит всё меню"]],
+  ["R19", ["Свежий негативный отзыв: цитата, точка, суть жалобы"]],
+  ["R20", ["Из каждых 100 сом: продукты, зарплаты, аренда, коммуналка, налоги, остаётся хозяину — округлённо","Готов ли Азиз назвать свою часть"]],
+  ["R22", ["Год второй точки","Сколько точек было в каком году","Год выхода в Казахстан","Главное решение, после которого начался рост","План на следующий год"]],
+  ["R23", ["Во сколько и в какой день приезжает поставка","Что и сколько в одной фуре"]],
+  ["R24", ["Кто будет апа: родственница сотрудника или постоянная гостья","Подарок для апа"]],
+  ["R25", ["На какой точке и во сколько приходит первая смена"]],
+  ["R26", ["Повар, готовый назвать зарплату: имя, сумма, график, стаж","Следующая должность и зарплата на ней","Одобряет ли Азиз"]],
+  ["R27", ["Подарок повару","Контакты семьи повара — пригласить тайно"]],
+  ["R28", ["Стоимость открытия: ремонт, оборудование, мебель, первая закупка, запас на 3 месяца, итого","Главное правило открытия — одной фразой"]],
+  ["Весь план", ["Аккаунт Buffet в Instagram — для соавторства","Ссылка на адреса точек для профиля","Бюджет на продвижение лучших роликов","Как Азизу звучит фраза «Баарыңарга аш болсун!» — оставляем или меняем"]]
+];
+
+var STORE = "aziz30.status.v1";
+var status = {};
+try { status = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { status = {}; }
+function save(){ try { localStorage.setItem(STORE, JSON.stringify(status)); } catch (e) {} }
+
+var byId = {}, byCode = {};
+REELS.forEach(function(r){ byId[r.id] = r; byCode[r.code] = r; });
+
+function esc(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+  });
+}
+function ph(h){ return h.replace(/\[([^\]]+)\]/g, '<mark class="ph">[$1]</mark>'); }
+function fmt(s){ return ph(esc(s)).replace(/\n/g, "<br>"); }
+function fmtScreen(s){
+  var raw = String(s), re = /\d+(?:[.,:\/]\d+)*/g, out = "", last = 0, m;
+  while ((m = re.exec(raw))) {
+    out += esc(raw.slice(last, m.index)) + '<span class="y">' + esc(m[0]) + '</span>';
+    last = m.index + m[0].length;
+  }
+  out += esc(raw.slice(last));
+  return ph(out).replace(/\n/g, "<br>");
+}
+function cap(s){ s = String(s); return s.charAt(0).toUpperCase() + s.slice(1); }
+function list(arr, cls){
+  if (!arr || !arr.length) return "";
+  return "<ul" + (cls ? ' class="' + cls + '"' : "") + ">" + arr.map(function(x){ return "<li>" + fmt(x) + "</li>"; }).join("") + "</ul>";
+}
+function olist(arr){ return "<ol>" + arr.map(function(x){ return "<li>" + fmt(x) + "</li>"; }).join("") + "</ol>"; }
+function kv(k, v){ return "<dt>" + esc(k) + "</dt><dd>" + v + "</dd>"; }
+function tag(r){ return '<span class="tag" style="--rc:' + RUB[r.rubric].color + '">' + esc(r.code) + "</span>"; }
+function dotsHTML(st){ return [0,1,2].map(function(k){ return '<i class="' + (st[k] ? "on" : "") + '"></i>'; }).join(""); }
+
+function beatHTML(b){
+  var h = '<li class="beat"><span class="tc">' + esc(b[0]) + '</span><div class="beat-body">';
+  if (b[1]) h += '<div><span class="lbl">Кадр</span>' + fmt(b[1]) + "</div>";
+  if (b[2]) h += '<div class="say"><span class="lbl">Текст</span>' + fmt(b[2]) + "</div>";
+  if (b[3]) h += '<div><span class="lbl">На экране</span><span class="onscreen">' + fmtScreen(b[3]) + "</span></div>";
+  return h + "</div></li>";
+}
+
+var CAPS = {};
+function reelHTML(r, i){
+  var rb = RUB[r.rubric], next = REELS[i + 1];
+  var teaser = next ? "Завтра: " + cap(next.short) : "Скоро: снова проверяю, узнают ли меня";
+  var st = status[r.id] || [0,0,0];
+  CAPS[r.id] = r.caption;
+  var h = '<details class="reel" id="' + r.id + '" data-rubric="' + r.rubric + '" data-batch="' + r.batch + '" style="--rc:' + rb.color + '">';
+  h += '<summary><span class="slate">' + esc(r.code) + '</span><span class="sum-main"><span class="sum-title">' + fmt(r.title) + '</span><span class="sum-meta"><span class="chip rub">' + esc(rb.name) + '</span><span class="chip">' + esc(BATCH[r.batch]) + "</span><span>Выход: день " + r.pub + " · " + esc(r.time) + "</span><span>" + esc(r.len) + '</span></span></span><span class="dots" aria-hidden="true">' + dotsHTML(st) + "</span></summary>";
+  h += '<div class="reel-body">';
+  h += '<div class="status" role="group" aria-label="Статус ролика на этом устройстве">' + ["Снято","Смонтировано","Выложено"].map(function(lab, k){
+    return '<button type="button" class="sbtn" data-r="' + r.id + '" data-k="' + k + '" aria-pressed="' + (st[k] ? "true" : "false") + '">' + lab + "</button>";
+  }).join("") + "</div>";
+  h += '<p class="why">' + fmt(r.why) + "</p>";
+  h += '<dl class="kv">' + kv("Съёмка", fmt(r.shoot)) + kv("Кто в кадре", list(r.who)) + kv("Где и когда", fmt(r.where)) + (r.props && r.props.length ? kv("Реквизит", list(r.props)) : "") + kv("Бюджет", fmt(r.budget)) + "</dl>";
+  if (r.prep && r.prep.length) h += "<h4>Подготовка</h4>" + list(r.prep, "checks");
+  if (r.interview) h += "<h4>Вопросы для интервью</h4>" + olist(r.interview);
+  h += '<h4>Сценарий по секундам</h4><ol class="beats">' + r.beats.map(function(b){ return beatHTML(b); }).join("");
+  h += '<li class="beat end"><span class="tc">+1 сек</span><div class="beat-body"><div><span class="lbl">Финальная плашка</span><span class="onscreen">' + fmtScreen(teaser) + "</span></div></div></li></ol>";
+  h += '<div class="two"><div><h4>Перебивки</h4>' + list(r.broll) + "</div><div><h4>Монтаж</h4>" + list(r.edit) + "</div></div>";
+  h += '<h4>Обложка и подпись</h4><div class="pub"><div><div class="cover"><span>' + fmt(r.cover) + '</span></div><p class="cover-note">Пунктир — граница сетки профиля</p></div><div class="cap"><p class="cap-text">' + fmt(r.caption) + '</p><button type="button" class="btn copy" data-copy="cap:' + r.id + '">Скопировать подпись</button></div></div>';
+  if (r.planB && r.planB.length) h += "<h4>Если пошло не так</h4>" + list(r.planB);
+  h += '<h4 class="neg-h">Нельзя</h4>' + list(r.dont, "neg-list");
+  if (r.after) h += '<p class="after">' + fmt(r.after) + "</p>";
+  h += '<p class="count"><b>Через 24 часа смотрим:</b> ' + fmt(r.count) + "</p>";
+  return h + "</div></details>";
+}
+
+function backupHTML(b){
+  return '<div class="backup"><div class="head"><span class="code">' + esc(b.code) + "</span><h3>" + esc(b.title) + '</h3><span class="chip">' + esc(b.len) + '</span><span class="chip">' + esc(b.budget) + "</span></div><p>" + fmt(b.when) + '</p><h4>Сценарий</h4><ol class="beats">' + b.beats.map(function(x){ return beatHTML(x); }).join("") + "</ol></div>";
+}
+
+function calHTML(row){
+  var items = row[1].map(function(id){
+    var r = byId[id];
+    return '<a class="rl" href="#' + id + '" style="--rc:' + RUB[r.rubric].color + '"><span class="tag">' + esc(r.code) + '</span><span class="rt">' + fmt(r.title) + '</span><span class="t">' + esc(r.time) + "</span></a>";
+  }).join("");
+  items += row[2].map(function(n){
+    return '<p class="' + (/^(Съёмка|Досъёмка)/.test(n) ? "shoot" : "note") + '">' + fmt(n) + "</p>";
+  }).join("");
+  return '<li><span class="d">День ' + row[0] + '</span><div class="items">' + items + "</div></li>";
+}
+
+var factsText = FACTS.map(function(f){
+  return f[0] + ":\n" + f[1].map(function(q){ return "— " + q; }).join("\n");
+}).join("\n\n");
+
+/* render */
+document.getElementById("reel-list").innerHTML = REELS.map(reelHTML).join("");
+document.getElementById("backup-list").innerHTML = BACKUPS.map(backupHTML).join("");
+document.getElementById("cal-list").innerHTML = CAL.map(calHTML).join("");
+document.getElementById("facts-body").innerHTML = FACTS.map(function(f){
+  var r = byCode[f[0]];
+  var t = r ? '<a href="#' + r.id + '" style="text-decoration:none">' + tag(r) + "</a>" : "<b>" + esc(f[0]) + "</b>";
+  return "<tr><td>" + t + "</td><td>" + list(f[1]) + "</td></tr>";
+}).join("");
+document.getElementById("metrics-body").innerHTML = REELS.map(function(r){
+  return "<tr><td>" + tag(r) + "</td><td>" + fmt(r.title) + "</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+}).join("");
+var counts = {free:0, food:0, buy:0};
+REELS.forEach(function(r){ counts[r.cost]++; });
+document.getElementById("budget-sum").textContent = "Без затрат — " + counts.free + " роликов. Еда по себестоимости — " + counts.food + ". Покупки — " + counts.buy + ". Цифры в скобках считает Азиз.";
+var freeCodes = REELS.filter(function(r){ return r.cost === "free"; }).map(function(r){ return r.code; }).join(", ");
+document.getElementById("budget-body").innerHTML = REELS.filter(function(r){ return r.cost !== "free"; }).map(function(r){
+  return "<tr><td>" + tag(r) + "</td><td>" + fmt(r.title) + "</td><td>" + fmt(r.budget) + "</td></tr>";
+}).join("") + "<tr><td><b>Остальные</b></td><td>" + esc(freeCodes) + "</td><td>0 сом</td></tr>";
+
+/* filters */
+var fState = {batch:"all", rubric:"all"};
+function fbtn(group, val, label, color){
+  return '<button type="button" class="fbtn" data-g="' + group + '" data-v="' + val + '" aria-pressed="false"' + (color ? ' style="--rc:' + color + '"' : "") + ">" + (color ? '<span class="dot"></span>' : "") + esc(label) + "</button>";
+}
+document.getElementById("f-batch").innerHTML = fbtn("batch","all","Все 30") + fbtn("batch","pilot","Пилот") + fbtn("batch","b1","Партия 1") + fbtn("batch","b2","Партия 2");
+document.getElementById("f-rubric").innerHTML = fbtn("rubric","all","Все рубрики") + Object.keys(RUB).map(function(k){ return fbtn("rubric", k, RUB[k].name, RUB[k].color); }).join("");
+function applyFilters(){
+  document.querySelectorAll(".fbtn").forEach(function(b){
+    b.setAttribute("aria-pressed", fState[b.dataset.g] === b.dataset.v ? "true" : "false");
+  });
+  document.querySelectorAll(".reel").forEach(function(el){
+    var ok = (fState.batch === "all" || el.dataset.batch === fState.batch) && (fState.rubric === "all" || el.dataset.rubric === fState.rubric);
+    el.hidden = !ok;
+  });
+}
+function updateProgress(){
+  var c = [0,0,0];
+  REELS.forEach(function(r){ var st = status[r.id]; if (st) { for (var k = 0; k < 3; k++) { if (st[k]) c[k]++; } } });
+  document.getElementById("progress").textContent = "На этом устройстве: снято " + c[0] + " из 30 · смонтировано " + c[1] + " · выложено " + c[2];
+}
+
+/* copy */
+function fallbackCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  var ok = false;
+  try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  return ok;
+}
+function copyFor(btn){
+  var key = btn.dataset.copy, text = "";
+  if (key.indexOf("cap:") === 0) text = CAPS[key.slice(4)] || "";
+  else if (key === "facts") text = factsText;
+  else { var el = document.getElementById("copy-" + key); text = el ? el.textContent : ""; }
+  var orig = btn.dataset.label || btn.textContent;
+  btn.dataset.label = orig;
+  function done(ok){
+    btn.textContent = ok ? "Скопировано" : "Не скопировалось — выделите текст вручную";
+    setTimeout(function(){ btn.textContent = orig; }, 2200);
+  }
+  try {
+    navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(fallbackCopy(text)); });
+  } catch (e) { done(fallbackCopy(text)); }
+}
+
+/* open a reel from a link or the address */
+function openReel(id, scroll){
+  var el = document.getElementById(id);
+  if (!el || el.tagName !== "DETAILS") return;
+  if (el.hidden) { fState.batch = "all"; fState.rubric = "all"; applyFilters(); }
+  el.open = true;
+  if (scroll) setTimeout(function(){ el.scrollIntoView({block:"start"}); }, 0);
+}
+function openFromHash(){
+  var id = (location.hash || "").slice(1);
+  if (/^r\d\d$/.test(id)) openReel(id, true);
+}
+
+var allOpen = false;
+var toggleBtn = document.getElementById("toggle-all");
+toggleBtn.addEventListener("click", function(){
+  allOpen = !allOpen;
+  document.querySelectorAll(".reel").forEach(function(el){ if (!el.hidden) el.open = allOpen; });
+  toggleBtn.textContent = allOpen ? "Свернуть все" : "Развернуть все";
+});
+
+document.addEventListener("click", function(e){
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var fb = t.closest(".fbtn");
+  if (fb) { fState[fb.dataset.g] = fb.dataset.v; applyFilters(); return; }
+  var sb = t.closest(".sbtn");
+  if (sb) {
+    var id = sb.dataset.r, k = Number(sb.dataset.k);
+    var st = (status[id] || [0,0,0]).slice();
+    st[k] = st[k] ? 0 : 1;
+    status[id] = st; save();
+    sb.setAttribute("aria-pressed", st[k] ? "true" : "false");
+    var dots = document.querySelector("#" + id + " .dots");
+    if (dots) dots.innerHTML = dotsHTML(st);
+    updateProgress();
+    return;
+  }
+  var cb = t.closest(".copy");
+  if (cb) { copyFor(cb); return; }
+  var a = t.closest('a[href^="#r"]');
+  if (a) openReel(a.getAttribute("href").slice(1), false);
+});
+window.addEventListener("hashchange", openFromHash);
+
+applyFilters();
+updateProgress();
+openFromHash();
+})();
+</script>
+</body>
+</html>
